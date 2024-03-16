@@ -1,0 +1,81 @@
+---
+import '@fontsource/abel';
+---
+
+
+<section>
+   <div class="info"> 
+     <h3>COPRAC - Nuestra historia </h3>
+     <p>COPRAC Ltd. es una sociedad de pilotos nacida en 1991 como resultado de la liberalización del servicio de pilotos, de igual manera es la empresa más antigua del río Paraná.
+      Herederos de la antigua Sociedad Mutual de Prácticos del Río Paraná, con 78 años de experiencia en el río y sus puertos. Contamos hoy con 62 socios lo que significa el 50% del total de Prácticos del Río Paraná, 
+      con integrantes de más de 20 años de profesión, siendo todos Capitanes de Río y Capitanes de Ultramar con años de experiencia en nuestros ríos.</p>
+     <p>COPRAC Ltd. es una sociedad piloto de servicios que se fundamenta en principios de solidaridad y profesionalismo, exigiendo de sí misma y de sus afiliados 
+     el mayor esfuerzo para lograr una absoluta confiabilidad en la calidad de nuestro servicio con el fin de ofrecer a nuestros clientes la mayor satisfacción.
+     </p>
+   </div>
+   <div class="imagen">
+    <img class="img" src="./asset/buque12.png" alt="">
+
+   </div>
+
+</section>
+
+<style>
+
+    section {
+        margin: auto;
+        width: 1100px;
+        padding: 30px 0;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .info {
+        width: 600px;
+        height: auto;
+        
+    }
+    
+    h3 {
+        font-family: 'Abel', sans-serif;
+        font-size: 45px;
+        letter-spacing: 2px;
+        text-decoration: underline;
+        text-decoration-color: crimson;
+        text-decoration-thickness: 5px ;
+    }
+    p {
+        font-family: 'Abel', sans-serif;
+        font-size: 20px;
+    }
+    .imagen {
+        background: #076585;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #fff, #076585);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #fff, #076585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+        border-radius:73% 27% 24% 76% / 37% 52% 48% 63% ;
+        width: 500px;
+        
+        
+        
+        
+    }
+     .img {
+        
+        padding-top: 100px;
+        padding-left: 50px;
+        width: 100%;
+        animation: float 3s linear infinite;
+    }
+    @keyframes float {
+        0%, 100%{
+            transform: translateY(0rem);
+        }
+        50% {
+            transform: translateY(-1.5rem);
+        }
+    }
+       
+        
+</style>
