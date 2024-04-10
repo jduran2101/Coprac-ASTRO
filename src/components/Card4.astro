@@ -1,35 +1,161 @@
+
+
 <div class="card">
-    <a href="https://www.smn.gob.ar/">
-      <h4>SERVICIO DE METEREOLOGIA NACIONAL</h4>
-      <img src="../asset/logo.png" alt="">
-    </a>
+    <div class="service">
+        <div class="uno">
+            <h3>PILOTAJE</h3>
+            <p>Nuestro servicio de pilotaje , es un servicio integral y 
+                se extiende a lo largo del Rio Parana.
+            </p>
+        </div>
+        <div class="uno">
+            <h3>TRASLADO</h3>
+            <p>El traslado y posicionamiento de los practicos se realiza 
+                a traves de una flota propia de vehiculos y choferes 
+                especialmente habilitados.
+            </p>
+        </div>
+        <div class="uno">
+            <h3>ASESORAMIENTO</h3>
+            <p>Brindamos comunicacion fluida y asesoramiento las 24hs 
+                los 365 dia del año.
+            </p>
+        </div>
+    </div>
+    <div class="imagen">
+       <img src="../asset/serviciosOriginal.jpg" alt="">
+    </div>
+    
+    <span class="d"><img class="a" src="../asset/voice-asesoramiento (1).svg" alt=""></span>
+    <span class="e"><img class="b" src="../asset/directions_boat-traslado (1).svg" alt=""></span>
+    <span class="f"><img class="c" src="../asset/conversion-pilotaje (1).svg" alt=""></span>
+
+
+
 </div>
+
+
+
+
+    
 
 <style>
     .card {
-        width: 450px;
-        height: 80px;
-        border-radius: 5px;
-        border: 2px solid crimson;
-        transition: 700ms linear;
-    }
-    .card:hover{
-         transform: scale(1.1);
-
+        margin: auto;
+        width: 800px;
+        height: 500px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        position: relative;
+        
     }
     .card img {
-        width: 170px;
-        height: 70px;
+        width: 40px;
     }
-    .card a {
-        width: 100%;
-        text-decoration: none;
-        display: flex;
-        justify-content: space-around;
-        padding: 5px;
-        color: rgb(83, 81, 81);
+    .card .d {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(189, 0, 33);
+        border-radius: 80px;
+        position: absolute;
+        left: 5px;
+        top:66px;
     }
-    .card h4 {
-        font-size: 18px ;
+    .card .e {
+       
+        width: 60px;
+        height: 60px;
+        background-color: rgb(189, 0, 33);
+        border-radius: 80px;
+        position: absolute;
+        left: 5px;
+        top: 388px;
     }
+    .card .f {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(189, 0, 33);
+        border-radius: 80px;
+        position: absolute;
+        left: 7px;
+        top: 200px;
+        
+
+    }
+
+        
+        
+        
+    .card  .c {
+        position: absolute;
+        left: 11px;
+        top: 11px;
+        
+    }
+    .card .b {
+        position: absolute;
+        left: 10px;
+        top: 12px;
+    }
+    .card .a {
+        position: absolute;
+        left: 16px;
+        top: 12px;
+    }
+    .card .service {
+        margin-left: 35px;
+        width: 300px;
+        padding: 50px;
+        border-left: 2px solid rgb(189, 0, 33);
+    }
+    .card .service .uno {
+        padding-bottom: 20px;
+        transition: 0.3s ease-in;
+        
+    }
+    .card .service .uno:hover {
+        transform: scale(1.1, 1.1);
+    }
+    .card .service:hover > .uno:not(:hover) {
+        filter: blur(10px);
+        transform: scale(0.9, 0.9);
+    }
+
+     
+    .card .service .uno h3 {
+        color: #fff;
+        font-size: 20px;
+    }
+    .card .service .uno p {
+        color: #fff;
+        font-size: 16px;
+    }
+    .card .imagen {
+        width: 400px;
+        
+    }
+    .card .imagen img {
+        width: 86%;
+        padding-top: 50px;
+        padding-left: 20px;
+        mask-image: linear-gradient(black 80%, transparent);
+        animation: show linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 50%;
+    }
+
+
+    @keyframes show {
+        from {
+            opacity:0;
+            scale: 25%;
+        }
+        to {
+            opacity: 1;
+            scale: 100%;
+        }
+    }
+    
+
 </style>

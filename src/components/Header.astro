@@ -3,31 +3,84 @@ import '@fontsource/abel';
 ---
 
 
-<section>
-    <video src="../asset/Vídeo sin título (2).mp4" autoplay controls></video>
+<section class="section1">
+    
     <header>
         <div class="contenedor-first">
            <div class="logo">
-              <h3>CO<span>PRAC</span> Ltd.</h3>
+              <h3>CO<span>PRAC</span>  LTD.</h3>
              </div>
             <nav>
                <a href="">HOME</a>
                <a href="">ABOUT US</a>
+               <a href="">SERVICE</a>
                <a href="">CONTACTO</a>
+
+               <svg class="idioma" xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-world">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M3.6 9h16.8" /><path d="M3.6 15h16.8" /><path d="M11.5 3a17 17 0 0 0 0 18" /><path d="M12.5 3a17 17 0 0 1 0 18" /></svg>
             </nav>
-            <div class="iconos">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-meta" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 10.174c1.766 -2.784 3.315 -4.174 4.648 -4.174c2 0 3.263 2.213 4 5.217c.704 2.869 .5 6.783 -2 6.783c-1.114 0 -2.648 -1.565 -4.148 -3.652a27.627 27.627 0 0 1 -2.5 -4.174z" /><path d="M12 10.174c-1.766 -2.784 -3.315 -4.174 -4.648 -4.174c-2 0 -3.263 2.213 -4 5.217c-.704 2.869 -.5 6.783 2 6.783c1.114 0 2.648 -1.565 4.148 -3.652c1 -1.391 1.833 -2.783 2.5 -4.174z" /></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z" /></svg>
-            </div>
+
+
+
+
+            <input type="checkbox" id="chek">
+            <label class="checkbtn">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="40"  height="40"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  
+                stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+            </label>
+
         </div>
     </header>
+    
+    
+    
+    
+    <div class="frase">
+        <h2>COPRAC</h2>
+        <p>DESDE 1991 , LLEVANDO CALIDAD A CADA PUERTO.</p>
+        <div class="barra"></div>
+    </div>
+   
+    <div class="frase2">
+        <h3>SOBRE NOSOTROS</h3>
+        <p>DESCUBRI NUESTRA HISTORIA Y COMPROMISO</p>
+        <div class="barra2"></div>
+        
+     <div class="parrafo"><p>COPRAC Ltd. es una sociedad de pilotos nacida en 1991 como resultado
+            de la liberalización del servicio de pilotos, de igual manera es la empresa
+            más antigua del río Paraná. Herederos de la antigua Sociedad Mutual de
+            Prácticos del Río Paraná, con 78 años de experiencia en el río y sus puertos.</p>
+        </div>
+
+    </div>
+   
+   
+   <script>
+        const chek = document.querySelector('.checkbtn')
+        const visi = document.querySelector('nav')
+        chek.addEventListener('click', ()=> {
+            visi.classList.toggle('nav-visible')
+        })
+    </script>
+
+
 </section>
 
 <style>
    
-    section video {
-        width: 100%;
+    .section1{
+       
+        background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4)),
+        url(../asset/buque.jpg);
+        height: 1050px;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        
+        
+        
+        
+        
         
     }
         
@@ -36,11 +89,11 @@ import '@fontsource/abel';
         position: fixed;
         top:0;
         z-index: 100;
-        width: 100%;
-        background-color: rgba(0,0,0,.3);
-        height: 90px;
+        width: 1280px;
+    
+        height: 110px;
         font-family: 'Abel', sans-serif;
-        border-bottom: 3px solid crimson;
+        
     }
         
         
@@ -50,29 +103,165 @@ import '@fontsource/abel';
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border-bottom: 2px solid #fff;
     }
     .logo h3 {
-        font-size: 35px;
+        font-size: 36px;
+        color: #fff;
     }
     .logo span {
-        color: crimson;
-    }  
+        color:rgb(189, 0, 33);
+    }
+    
     nav {
         display: flex;
         justify-content: space-between;
-        gap: 30px;
+        align-items: center;
+        gap: 60px;
     }
     nav a {
         font-size: 20px;
+        font-weight: bolder;
         letter-spacing: 1px;
         text-decoration: none;
-        color: crimson;
+        color: #fff;
+        transition: 1s ease;
     }
-    .iconos svg {
-        color: crimson;
-        margin-right: 5px;
+    nav a:hover {
+        color: rgb(189, 0, 33);
+    }
+    .checkbtn svg {
+        color: #fff;
     }  
+    .checkbtn,  #chek{
+        display: none;
+    }
+    .idioma {
+        color: #fff;
+        cursor: pointer;
         
+    }    
+    .frase {
+        padding-top: 350px;
+        padding-left: 150px;
+    }
+    .frase h2 {
+        font-size: 70px;
+        color: #fff;
+        margin: 0;
+    }
+    .frase p {
+        font-size: 28px;
+        color: #fff;
+        margin: 0;
+    }
+    .frase .barra {
+        margin-top: 15px;
+        width: 70px;
+        height: 5px;
+        background-color: #fff
+    }
+    .frase2 h3 {
+        margin-bottom: 10px;
+        font-size: 40px;
+        text-align: center;
+        color: #fff;
+    }
+    .frase2 {
+        margin-top: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .frase2 p {
+        
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+        
+    }
+    .frase2 .barra2 {
+        width: 70px;
+        height: 5px;
+        background-color: #fff
+    }
+    .parrafo {
+        padding-top: 20px;
+        width: 500px;
+        
+        
+    
+    }
+    .parrafo > p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+    
+    @media (max-width: 870px){
+        header {
+            width: 100%;
+            
+        }
+        .contenedor-first {
+            
+            width: auto;
+            margin: 0 15px auto;
+            
+            
+            
+        }
+        .checkbtn {
+        display: block;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+    nav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(25px);
+        top: 111px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        left: 0;
+        left: -100%;
+        transition: all .5s;
+    
+    }
+    nav a {
+        font-size: 25px;
+        padding-top: 15px;
+        font-weight: 600;
+        
+    }
+    .nav-visible{
+        left: 0;
+    }
+    .section1 .frase {
+        padding-top: 390px;
+        padding-left: 10px;
+    }
+    .section1 .frase h2 {
+        text-align: center;
+        font-size: 60px;
+    }
+    .section1 .frase p {
+        text-align: center;
+        font-size: 24px;
+    }
+    .section1 .frase .barra {
+        margin-left: 360px;
+    }
+    .section1 .frase2 {
+        display: none;
+    }
+
+
+    }
 
 
     

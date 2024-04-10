@@ -1,7 +1,28 @@
 <section class="banner">
-   <div class="imagen">
-    <h3>"Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
-        In quam, voluptates ipsum dolores ipsa corrupti veritatis possimus"</h3>
+   <div class="info">
+      <div class="uno">
+        <h2>+ 60 SOCIOS</h2>
+        <p>La fuerza y el respaldo del practico detras de COPRAC,
+            mostrando amplitud de red profesional.
+        </p>
+
+      </div>
+      <div class="uno">
+        <h2>50% DE PRACTICOS</h2>
+        <p>Posicion dominante en el mercado, reflejando
+            influencia y liderazgo en la industria.
+        </p>
+
+      </div>
+      <div class="uno">
+        <h2>+20 AÑOS DE EXPERIENCIA</h2>
+        <p>Larga trayectoria, demostrando conocimiento profundo
+            y experiencia acumulada en el sector.
+        </p>
+
+      </div>
+
+    
    </div>
 </section>
 
@@ -9,23 +30,82 @@
 <style>
     .banner {
         width: 100%;
-        margin-bottom: 30px;
-    }
-    .imagen {
-        background: #403A3E;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #BE5869, #403A3E);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #BE5869, #403A3E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-        
         height: 200px;
+        background-color: rgb(44, 44, 42);
+        border-top: 3px solid rgb(189, 0,33);
+        border-bottom: 3px solid rgb(189, 0, 33);
+    }
+    .banner .info {
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+
+        animation: mov linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 50%;
         
+    }
+    .info .uno {
+        width: 280px;
+        height: 180px;
+        
+        
+    }
+    @keyframes mov {
+        from {
+            opacity: 0;
+            scale: .5;
+            translate: 0 100px;
+        }
+        to {
+            opacity: 1;
+            scale: 1;
+            translate: 0 0;
+        }
+    }
+
+
+
+
+    .info .uno h2 {
+        font-size: 26px;
+        
+        text-align: center;
+        color: rgb(189, 0, 33);
+    }
+    .info .uno p {
+        color: #fff;
+        text-align: center;
+        font-size: 17px;
+    }    
+        
+    @media (max-width: 870px){
+        .banner {
+            height: 725px;
+        }
+        .banner .info {
+            padding: 20px;
+            gap: 35px;
+            flex-direction:column;
+            height: auto ;
+            animation: none;
+        }
+        
+        .banner .info .uno h2{
+            font-size: 33px;
+
+        }
+        .banner .info .uno p {
+            font-size: 22px;
+        }
+
+
+
+
 
     }
-    .imagen h3 {
-        font-family: 'Abel', sans-serif;
-        font-size: 26px;
-        color: azure;
-        text-align: center;
-        padding-top: 80px;
-    }
+    
 </style>

@@ -5,11 +5,12 @@ import Card2 from '../components/Card2.astro';
 import Banner from '../components/Banner.astro';
 import Card3 from '../components/Card3.astro';
 import Card4 from '../components/Card4.astro';
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		    <Card2 />
+		    
 			<Banner />
 		<section class="nose">
 			<Card
@@ -34,25 +35,55 @@ import Card4 from '../components/Card4.astro';
 				body="Come say hi to our amazing Discord community. Optimizar nuestras operaciones para conseguir el mejor servicio."
 			/>
 		</section>
-		<section class="cosa">
-			<h3>NUESTROS SERVICIOS</h3>
-			<div class="cosa1">
-			   <Card3 />
-			   <Card3 />
-			   <Card3 />
-			   <Card3 />
-			</div>
-		</section>
-		<section class="info">
-			<h3>INFORMACION DE INTERES</h3>
-			<div class="interes">
-			   <Card4 />
-			   <Card4 />
-			   <Card4 />
-			   <Card4 />
 
+
+
+
+
+
+		<section class="info">
+			<h3>SERVICIOS</h3>
+			<p>NUESTROS SERVICIOS PERSONALIZADOS</p>
+			<div class="barra"></div>
+			
+			   <Card4 />
+			   
+		</section>
+		<section class="cosa">
+			<h3>LINKS DE INTERES</h3>
+			<p>RECURSOS Y ENLACES RELEVANTES</p>
+			<div class="barra"></div>
+			<div class="cosa1">
+			   <Card3 
+			     title='Servicio Hidrofia Naval'
+				 img='../asset/pronosticoV.jpg'
+			    />
+			   <Card3 
+			     title='Marintraffic'
+				 img='../asset/serviciosOriginal.jpg'
+				/>
+			   
+			   <Card3 
+			     title='WindGuru'
+				 img='../asset/servicioM.jpg'
+			    />
+			   <Card3 
+			     title='Pronostico Marea'
+				 img='../asset/tablaDeM.jpg'
+			    />
+			   <Card3
+			     title='Alturas Diarias'
+				 img='../asset/Interna.jpg'  
+			    />
+			   <Card3 
+			     title='Ordenanzas Maritimas'
+				 img="../asset/servicioH.jpg"
+			    />
 			</div>
 		</section>
+	  
+
+			
 	</main>
 </Layout>
 
@@ -80,36 +111,64 @@ import Card4 from '../components/Card4.astro';
 		gap: 10px;
 	}
 	.cosa {
+		
 		width: 100%;
-        height: 500px;
-        background-image: url(../asset/barcos-en.jpg);
-        background-size: cover;
-        background-position: center;
+        height: auto;
+		padding-bottom: 50px;
+        background-image: linear-gradient(#2c2c2a, #c5bebf);
 	}
 	.cosa h3 {
 		font-size: 32px;
 		color: #fff;
 		text-align: center;
-		padding: 30px 0px;
+		padding-top: 30px;
+		margin: 0;
+		
+	}
+	.cosa p {
+		margin: 0;
+		color: #fff;
+		font-size: 22px;
+		text-align: center;
+		
 	}
 	
         
         
 	.cosa1 {
+		margin: auto;
+		height: auto;
+		width: 80%;
 		display: flex;
-		justify-content: space-around;
-		align-items: center;
-
+		flex-direction: row;
+		flex-wrap: wrap;
+	    gap: 40px;
+		padding-bottom: 80px;
 	}
+		
+		
+		
+
 	.info {
 		width: 100%;
-		height: 500px;
+		background-color: rgb(44, 44, 42);
+		
+		border-top: 3px solid rgb(189, 0, 33);
 	}
 	.info h3 {
 		padding-top: 30px;
 		font-size: 32px ;
-		color: crimson;
+		color: #fff;
 		text-align: center;
+		margin: 0;
+		
+	}
+	.info p {
+		text-align: center;
+		font-size: 22px;
+		margin: 0;
+		color: #fff;
+		
 	}
 	.interes {
 		
@@ -119,8 +178,30 @@ import Card4 from '../components/Card4.astro';
 		gap: 20px;
 	}
         
-        
-        
+    .cosa .barra {
+		margin-top: 15px;
+        width: 70px;
+        height: 5px;
+        background-color: #fff;
+		margin-bottom: 70px;
+		margin-left: 590px;
+		
+	}
+	.info .barra {
+		margin-top: 15px;
+		width: 70px;
+        height: 5px;
+        background-color: #fff;
+		margin-bottom: 70px;
+		margin-left: 595px;
+	}    
+    .romeo {
+		margin: 60px 0;
+		height: 700px;
+	}
+	.romeo h2 {
+		text-align: center;
+	}
 		
 	
 	

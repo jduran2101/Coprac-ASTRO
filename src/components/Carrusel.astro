@@ -1,0 +1,119 @@
+
+<div class="contenedor-principal">
+    <button role="button" id="izq" class="flecha-izquierda">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>
+    </button>
+    <div class="contenedor-carrusel">
+        <div class="carrusel">
+            <div class=foto>
+                <a href=""><img src="../asset/Interna.jpg" alt=""></a>
+            </div>
+
+            <div class=foto>
+                <a href=""><img src="../asset/tablaDeM.jpg" alt=""></a>
+            </div>
+
+            <div class=foto>
+                <a href=""><img src="../asset/servicioM.jpg" alt=""></a>
+            </div>
+
+            <div class=foto>
+                <a href=""><img src="../asset/servicioH.jpg" alt=""></a>
+            </div>
+
+            <div class=foto>
+                <a href=""><img src="../asset/pronosticoV.jpg" alt=""></a>
+            </div>
+
+            <div class=foto>
+                <a href=""><img src="../asset/pronosticoV.jpg" alt=""></a>
+            </div>
+            
+            <div class=foto>
+                <a href=""><img src="../asset/pronosticoV.jpg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+    <button role="button" id="derecha" class="flecha-derecha">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+    </button>
+    
+
+
+<script>
+  const carrusel2 = document.querySelector('.contenedor-carrusel');
+  
+  const foto = document.querySelectorAll('.foto');
+  const izquierda = document.getElementById('izq');
+  const derecha = document.getElementById('derecha');
+
+  derecha.addEventListener('click', ()=> {
+    carrusel2.scrollLeft += carrusel2.offsetWidth
+  });
+  izquierda.addEventListener('click', ()=> {
+    carrusel2.scrollLeft -= carrusel2.offsetWidth
+  })
+
+
+
+</script>
+
+
+</div>
+
+
+
+
+
+
+<style>
+     .contenedor-principal {
+        margin: 0 auto;
+        width: 750px;
+        display: flex;
+        align-items: center;
+        position: relative;
+     }
+    .flecha-izquierda, .flecha-derecha {
+        position: absolute;
+        height: 50%;
+        top: calc(50%-25%);
+        line-height: 40px;
+        width: 50px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 500;
+        transition: .2s ease all;
+    }
+    .flecha-izquierda {
+        left: 0;
+    }
+    .flecha-derecha{
+        right: 0;
+    }
+    .contenedor-carrusel {
+        width: 100%;
+        padding: 20px 0;
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+    .carrusel {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .carrusel .foto {
+        min-width: 20%;
+        
+    }
+    .carrusel .foto img {
+        width: 100%;
+    }
+
+
+
+
+
+</style>
