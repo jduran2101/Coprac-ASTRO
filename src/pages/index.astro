@@ -16,7 +16,7 @@ import Card4 from '../components/Card4.astro';
 			<Card
 				href="https://docs.astro.build/"
 				title="NUESTRA EMPRESA"
-				body="Learn how Astro works and explore the official API docs.mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+				body="Learn how Astro works and explore the official API docs.mmmmmmm"
 			/>
 			<Card
 				href="https://astro.build/integrations/"
@@ -202,7 +202,20 @@ import Card4 from '../components/Card4.astro';
 	.romeo h2 {
 		text-align: center;
 	}
-		
+	@media (max-width: 900px){
+		.info .barra {
+			margin-left: 192px;
+		}
+		.cosa .barra {
+			margin-left: 192px;
+		}
+		.cosa .cosa1 {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}	
 	
 	
 	

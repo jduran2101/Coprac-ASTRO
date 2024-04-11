@@ -58,5 +58,44 @@ const { href, title, body } = Astro.props;
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 	}
+	@media (max-width: 900px){
+		.link-card {
+			border-radius: 50%;
+			width: 350px;
+			height: 350px;
+		}
+		.link-card > a {
+			width: 98%;
+			border-radius: 50%;
+			border: 3px solid red;
+			animation: move 5s ease-in-out infinite;
+			transition: all 1s ease-in-out;
+		}
+		@keyframes move {
+			0% {
+				border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+			}
+			50% {
+				border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; 
+			}
+			100% {
+				border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+			}
+			
+		}
+
+
+
+
+
+
+
+
+		h2, p {
+			text-align: center;
+			padding-top: 50px;
+			
+		}
+	}
 	
 </style>
