@@ -1,22 +1,22 @@
 <section class="banner">
    <div class="info">
       <div class="uno">
-        <h2>+ 60 SOCIOS</h2>
+        <h2>+ 60 SOCIOS</h2><br>
         <p>La fuerza y el respaldo del practico detras de COPRAC,
             mostrando amplitud de red profesional.
         </p>
 
       </div>
       <div class="uno">
-        <h2>50% DE PRACTICOS</h2>
+        <h2>50% DE PRACTICOS</h2><br>
         <p>Posicion dominante en el mercado, reflejando
             influencia y liderazgo en la industria.
         </p>
 
       </div>
       <div class="uno">
-        <h2>+20 AÑOS DE EXPERIENCIA</h2>
-        <p>Larga trayectoria, demostrando conocimiento profundo
+        <h2>+20 AÑOS DE EXPERIENCIA</h2><br>
+        <p>Larga trayectoria, demostrando conocimiento
             y experiencia acumulada en el sector.
         </p>
 
@@ -31,7 +31,7 @@
     .banner {
         width: 100%;
         height: 200px;
-        background-color: rgb(44, 44, 42);
+        background-color: rgb(42, 42, 41);
         border-top: 3px solid rgb(189, 0,33);
         border-bottom: 3px solid rgb(189, 0, 33);
     }
@@ -43,18 +43,22 @@
         align-items: center;
         gap: 50px;
 
-        animation: mov linear both;
+        /*animation: mov linear both;
         animation-timeline: view();
-        animation-range: entry 20% cover 40%;
+        animation-range: entry 20% cover 40%; */
         
     }
     .info .uno {
-        width: 280px;
-        height: 180px;
+        width: 290px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         
         
     }
-    @keyframes mov {
+   /* @keyframes mov {
         from {
             opacity: 0;
             scale: .5;
@@ -65,42 +69,47 @@
             scale: 1;
             translate: 0 0;
         }
-    }
+    } */
 
 
 
 
     .info .uno h2 {
-        font-size: 24px;
-        font-weight: 400;
+        font-size: 20px;
+        
+        font-weight: 600;
         text-align: center;
-        color: rgb(189, 0, 33);
+        color: #fff;
     }
     .info .uno p {
         color: #fff;
         text-align: center;
+        
         font-size: 17px;
         font-weight: 200;
     }    
         
     @media (max-width: 900px){
         .banner {
-            height: 725px;
+            height: 500px;
         }
         .banner .info {
-            padding: 20px;
-            gap: 35px;
+            padding: 15px;
+            gap: 15px;
             flex-direction:column;
             height: auto ;
             
         }
+        .info .uno {
+            height: 150px;
+        }
         
         .banner .info .uno h2{
-            font-size: 26px;
+            font-size: 20px;
 
         }
         .banner .info .uno p {
-            font-size: 20px;
+            font-size: 16px;
         }
 
 

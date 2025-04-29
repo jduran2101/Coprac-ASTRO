@@ -1,17 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Card2 from '../components/Card2.astro';
-import Banner from '../components/Banner.astro';
-import Card3 from '../components/Card3.astro';
-import Card4 from '../components/Card4.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Card2 from "../components/Card2.astro";
+import Banner from "../components/Banner.astro";
+import Card3 from "../components/Card3.astro";
+import Card4 from "../components/Card4.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Coprac">
 	<main>
-		    
-			<Banner />
+		<Banner />
 		<section class="nose">
 			<Card
 				href="https://docs.astro.build/"
@@ -22,7 +20,6 @@ import Card4 from '../components/Card4.astro';
 				href="https://astro.build/integrations/"
 				title="NUESTRA POLITICA"
 				body="lorem mnsioisn xampxapj La política de Pilotos S.A. es de una estricta observancia de todas"
-				
 			/>
 			<Card
 				href="https://astro.build/themes/"
@@ -36,60 +33,62 @@ import Card4 from '../components/Card4.astro';
 			/>
 		</section>
 
-
-
-
-
-
 		<section class="info">
 			<h3>SERVICIOS</h3>
 			<p>NUESTROS SERVICIOS PERSONALIZADOS</p>
 			<div class="barra"></div>
-			
-			   <Card4 />
-			   
+
+			<Card4 />
 		</section>
 		<section class="cosa">
 			<h3>LINKS DE INTERES</h3>
 			<p>RECURSOS Y ENLACES RELEVANTES</p>
 			<div class="barra"></div>
-			<div class="cosa1">
-			   <Card3 
-			     title='Servicio Hidrofia Naval'
-				 img='../asset/pronosticoV.jpg'
-			    />
-			   <Card3 
-			     title='Marintraffic'
-				 img='../asset/serviciosOriginal.jpg'
-				/>
-			   
-			   <Card3 
-			     title='WindGuru'
-				 img='../asset/servicioM.jpg'
-			    />
-			   <Card3 
-			     title='Pronostico Marea'
-				 img='../asset/tablaDeM.jpg'
-			    />
-			   <Card3
-			     title='Alturas Diarias'
-				 img='../asset/Interna.jpg'  
-			    />
-			   <Card3 
-			     title='Ordenanzas Maritimas'
-				 img="../asset/servicioH.jpg"
-			    />
+
+			<div class="slider">
+				<div class="list">
+					<div class="item" style="--position:1">
+						<Card3
+							title="Servicio Hidrofia Naval"
+							img="../asset/pronosticoV.webp"
+						/>
+					</div>
+					<div class="item" style="--position:2">
+						<Card3
+							title="Marintraffic"
+							img="../asset/serviciosOriginal.webp"
+						/>
+					</div>
+					<div class="item" style="--position:3">
+						<Card3 title="WindGuru" 
+						img="../asset/servicioM.webp" />
+					</div>
+					<div class="item" style="--position:4">
+						<Card3
+							title="Pronostico Marea"
+							img="../asset/tablaDeM.webp"
+						/>
+					</div>
+					<div class="item" style="--position:5">
+						<Card3
+							title="Alturas Diarias"
+							img="../asset/Interna.webp"
+						/>
+					</div>
+					<div class="item" style="--position:6">
+						<Card3
+							title="Ordenanzas Maritimas"
+							img="../asset/servicioH.webp"
+						/>
+					</div>
+				</div>
 			</div>
 		</section>
-	  
-
-			
 	</main>
 </Layout>
 
 <style>
 	main {
-		
 		/*margin: auto;
 		padding: 1rem;
 		width: 800px;
@@ -98,12 +97,12 @@ import Card4 from '../components/Card4.astro';
 		font-size: 20px;
 		line-height: 1.6;*/
 	}
-	
+
 	.nose {
 		padding: 30px 0px;
 		max-width: 1100px;
 		margin: auto;
-		
+
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -111,11 +110,10 @@ import Card4 from '../components/Card4.astro';
 		gap: 10px;
 	}
 	.cosa {
-		
 		width: 100%;
-        height: auto;
+		height: auto;
 		padding-bottom: 50px;
-        background-image: linear-gradient(#2c2c2a, #c5bebf);
+		background-image: linear-gradient(#2c2c2a, #c5bebf);
 	}
 	.cosa h3 {
 		font-size: 28px;
@@ -124,89 +122,109 @@ import Card4 from '../components/Card4.astro';
 		text-align: center;
 		padding-top: 30px;
 		margin: 0;
-		
 	}
 	.cosa p {
 		margin: 0;
 		color: #fff;
 		font-size: 20px;
 		text-align: center;
-		
 	}
-	
-        
-        
-	.cosa1 {
-		margin: auto;
-		height: auto;
+    .slider {
 		width: 80%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-	    gap: 40px;
-		padding-bottom: 80px;
+		margin: auto;
+		overflow: hidden;
+		height: 100px;
+		
+		mask-image: linear-gradient(to right, transparent, #000 10% 90%,transparent);
 	}
+	.slider .list {
+		display: flex;
+		width: 100%;
+		min-width: calc(300px * 7);
+		position: relative;
+	}
+	.slider .list .item {
+		width: 300px;
+		height: 100px;
+		position: absolute;
+		left: 80%;
+		transition: filter .5s;
+		animation: autoRun 15s linear infinite;
+		animation-delay: calc((15s / 6) * ( var(--position) - 1));
+	}
+	@keyframes autoRun {
+		from {
+			left: -300px;
+		}
+		/*to {
+			left:calc((300px) * -1)
+		}*/
 		
-		
-		
+	}
+	.slider:hover .item {
+		animation-play-state: paused!important;
+		filter: grayscale(1);
+	}	
 
 	.info {
 		width: 100%;
 		background-color: rgb(44, 44, 42);
-		
+
 		border-top: 3px solid rgb(189, 0, 33);
 	}
 	.info h3 {
 		padding-top: 30px;
-		font-size: 28px ;
+		font-size: 28px;
 		font-weight: 400;
 		color: #fff;
 		text-align: center;
 		margin: 0;
-		
 	}
 	.info p {
 		text-align: center;
 		font-size: 20px;
 		margin: 0;
 		color: #fff;
-		
 	}
 	.interes {
-		
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		gap: 20px;
 	}
-        
-    .cosa .barra {
+
+	.cosa .barra {
 		margin-top: 15px;
-        width: 70px;
-        height: 5px;
-        background-color: #fff;
+		width: 70px;
+		height: 5px;
+		background-color: #fff;
 		margin-bottom: 70px;
 		margin-left: 590px;
-		
 	}
 	.info .barra {
 		margin-top: 15px;
 		width: 70px;
-        height: 5px;
-        background-color: #fff;
+		height: 5px;
+		background-color: #fff;
 		margin-bottom: 70px;
 		margin-left: 595px;
-	}    
-    .romeo {
+	}
+	.romeo {
 		margin: 60px 0;
 		height: 700px;
 	}
 	.romeo h2 {
 		text-align: center;
 	}
-	@media (max-width: 900px){
+	@media (max-width: 900px) {
 		.info .barra {
 			margin-left: 192px;
+		}
+		.info h3 {
+			font-size: 24px;
+		}
+		.info p {
+			font-size: 18px;
 		}
 		.cosa .barra {
 			margin-left: 192px;
@@ -217,9 +235,11 @@ import Card4 from '../components/Card4.astro';
 			justify-content: center;
 			align-items: center;
 		}
-	}	
-	
-	
-	
-	
+		.cosa h3 {
+			font-size: 24px;
+		}
+		.cosa p {
+			font-size: 18px;
+		}
+	}
 </style>

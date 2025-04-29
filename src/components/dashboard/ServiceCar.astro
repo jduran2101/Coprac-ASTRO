@@ -1,0 +1,127 @@
+---
+
+---
+
+<div class="carHernan">
+    <h4>Remis<br /> Bs As</h4>
+    <div class="links">
+        <a href="">Precios</a>
+        <a href="">Flota</a>
+    </div>
+</div>
+<div class="carLacoste">
+    <div class="links">
+        <a href="">Precios</a>
+        <a href="">Flota</a>
+    </div>
+    <h4>Remis Rosario</h4>
+</div>
+
+<style>
+    .carHernan {
+        width: 500px;
+        height: 100px;
+        border: 2px solid rgb(189, 0, 33);
+        border-radius: 10px;
+        box-shadow:
+            rgb(189, 0, 33, 0.35) 0px 50px 100px -20px,
+            rgb(189, 0, 33, 0.35) 0px 30px 60px -30px,
+            rgba(189, 0, 33, 0.35) 0px -2px 6px 0px inset;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        h4 {
+            color: #fff;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .links {
+            width: 350px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-color: rgb(189, 0, 33);
+            justify-content: space-evenly;
+            clip-path: polygon(4% 0, 100% 0%, 100% 100%, 4% 100%, 0% 50%);
+
+            a {
+                font-size: 14px;
+                color: rgb(68, 67, 67);
+                background-color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: 20px;
+            }
+        }
+    }
+    .carLacoste {
+        width: 500px;
+        height: 100px;
+        border: 2px solid rgb(189, 0, 33);
+        border-radius: 10px;
+        box-shadow:
+            rgb(189, 0, 33, 0.35) 0px 50px 100px -20px,
+            rgb(189, 0, 33, 0.35) 0px 30px 60px -30px,
+            rgba(189, 0, 33, 0.35) 0px -2px 6px 0px inset;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+
+        h4 {
+            color: #fff;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .links {
+            width: 350px;
+            height: 100%;
+            display: flex;
+            background-color: rgb(189, 0, 33);
+            justify-content: space-evenly;
+            align-items: center;
+            clip-path: polygon(0% 0%, 96% 0, 100% 50%, 96% 100%, 0% 100%);
+            a {
+                font-size: 14px;
+                background-color: #fff;
+                color: rgb(68, 67, 67);
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: 20px;
+            }
+        }
+    }
+    @media (max-width: 900px) {
+        .carHernan {
+            width: 160px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            .links {
+                width: 100%;
+                height: 290px;
+                clip-path: none;
+            }
+            h4 {
+                padding: 5px;
+            }
+        }
+        .carLacoste {
+            width: 160px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            .links {
+                width: 100%;
+                height: 290px;
+                clip-path: none;
+            }
+            h4 {
+                padding: 5px;
+            }
+        }
+    }
+</style>

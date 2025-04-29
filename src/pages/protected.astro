@@ -1,0 +1,163 @@
+---
+import TablaDeusuarios from "../components/dashboard/TablaDeusuarios.astro";
+import ServiceCar from "../components/dashboard/ServiceCar.astro";
+import Dashcard from "../components/dashboard/Dashcard.astro";
+import "@fontsource-variable/quicksand";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard-Coprac</title>
+    </head>
+    <body>
+        <main>
+            <div class="header">
+                <h3>CO<span>PRAC</span> LTD.</h3>
+                <button class="out" id="logout">Salir</button>
+            </div>
+            <p class="time">{new Date().toLocaleString()}</p>
+            <section class="firstbox">
+                <Dashcard
+                    titulo="PRACTICOS"
+                    link="#pilot"
+                    img="/asset/practico.jpg"
+                />
+                <Dashcard
+                    titulo="PIZARRA web"
+                    link="http://pilotmanagercoprac.ddns.net/Account/GoInfoMovimientos?token=bd7f3f0a-a1de-4ae9-85aa-55dcaf49cbf1"
+                    img="/asset/104.webp"
+                />
+                <Dashcard
+                    titulo="CRONOGRAMA DE FRANCOS"
+                    link="https://docs.google.com/spreadsheets/d/1RDCjMN5MZWtckUN2AsVBPmxIQmAusHiM/edit?usp=drive_link&ouid=108091066637960145705&rtpof=true&sd=true"
+                    img="/asset/excel2.png"
+                />
+            </section>
+
+            <section class="secondbox">
+                <ServiceCar />
+            </section>
+            <section class="threebox">
+                <Dashcard titulo="INF. FINANCIERO" />
+                <Dashcard titulo="ULTIMO BALANCE" 
+                img="/asset/balances.webp" />
+                <Dashcard
+                    titulo="REGLAMENTO de ORG."
+                    img="/asset/Coprac2.webp"
+                    link="https://drive.google.com/file/d/1YN4bjgk81oqkgyNc7CB4qRJk5SvXLSTw/view?usp=drive_link"
+                />
+            </section>
+            <TablaDeusuarios />
+        </main>
+    </body>
+    <script>
+        import { actions } from "astro:actions";
+
+        const logOutelem = document.querySelector("#logout") as HTMLLIElement;
+        logOutelem?.addEventListener("click", () => {
+            actions.logout();
+            window.location.href = "/";
+        });
+    </script>
+</html>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        margin: auto;
+        max-width: 1280px;
+        background-color: rgb(52, 52, 51);
+        box-sizing: border-box;
+        font-family: "Quicksand Variable", sans-serif;
+    }
+    .header {
+        width: 90%;
+        margin: 0 auto;
+        border-bottom: 2px solid rgb(189, 0, 33);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            font-size: 34px;
+            color: #fff;
+        }
+        span {
+            color: rgb(189, 0, 33);
+        }
+        .out {
+            padding: 10px 25px;
+            background-color: rgb(189, 0, 33);
+            color: #fff;
+            font-size: 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+    .time {
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+    .firstbox {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 50px;
+        height: 150px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .secondbox {
+        width: 90%;
+        height: 150px;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .threebox {
+        width: 90%;
+        margin: 0 auto;
+
+        height: 150px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    @media (max-width: 900px) {
+        .firstbox{
+            width: 100%;
+            height: 350px;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .secondbox {
+            width: 100%;
+            height: 270px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .threebox {
+            width: 100%;
+            height: 350px;
+            padding-top: 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+</style>

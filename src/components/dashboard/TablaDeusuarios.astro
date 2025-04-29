@@ -1,0 +1,106 @@
+---
+import { usuarios } from "../../data/usuarios.json";
+---
+
+<section>
+    <h3 id="pilot">-- PRACTICOS --</h3>
+    <table class="table-fixed">
+        <thead>
+            <tr>
+                <th class="habi">Habilitacion</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>R.Medica</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 1797</td>
+                <td>Federico Nada</td>
+                <td>mmmmmm@gmail.com</td>
+                <td>20nov2030</td>
+            </tr>
+            {
+                usuarios.map((usuario) => (
+                    <tr>
+                        <td>{usuario.habilitacion}</td>
+                        <td>{usuario.nombre}</td>
+                        <td>{usuario.email}</td>
+                        <td>{usuario.fecha}</td>
+                    </tr>
+                ))
+            }
+        </tbody>
+    </table>
+</section>
+
+<style>
+    section {
+        width: 90%;
+        padding-top: 70px;
+        margin: 0 auto;
+        height: 800px;
+        h3 {
+            font-size: 36px;
+            color: #fff;
+            text-align: center;
+        }
+    }
+    section table {
+        border-collapse: collapse;
+        border: 2px solid rgb(189, 0, 33);
+
+        width: 80%;
+        margin: 0 auto;
+    }
+    table thead {
+        color: #fff;
+        
+        background-color: rgb(189, 0, 33);
+        position: sticky;
+        top: 0;
+    }
+    td,
+    th {
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        border-bottom: 1px solid rgb(189, 0, 33);
+    }
+   
+    .table-fixed {
+        display: block;
+        height: 400px;
+        overflow-y: auto;
+        border-radius: 10px;
+        
+    }
+    .table-fixed, tr {
+        
+        width: 763px;
+    }
+    .table-fixed, tr>th {
+        
+        width: 250px;
+        .habi {
+            width: 100px;
+        }
+    }
+    @media (max-width: 900px) {
+        section {
+            width: 100%;
+            padding-top: 25px;
+            h3 {
+                font-size: 26px;
+            }
+
+        
+        }
+        section table {
+            width: 95%;
+        }
+        td {
+            font-size: 13px;
+        }
+    }
+</style>

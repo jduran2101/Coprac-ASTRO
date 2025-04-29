@@ -1,30 +1,43 @@
 ---
 interface Props {
-    title:string;
-    img:string;
+    title: string;
+    img: string;
 }
-const {title, img} = Astro.props
+const { title, img } = Astro.props;
 ---
 
 <div class="card">
     <a href="">
-   <img src={img} alt="">
-    <div class="descrip">
-        <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  
-        class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
-        <div class="prob">
-        <h3>{title}</h3>
+        <img src={img} alt="" />
+        <div class="descrip">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-link"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M9 15l6 -6"></path><path
+                    d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"
+                ></path><path
+                    d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"
+                ></path></svg
+            >
+            <div class="prob">
+                <h3>{title}</h3>
+            </div>
         </div>
-    </div>
     </a>
 </div>
-
 
 <style>
     .card h3 {
         color: #fff;
-        
     }
     .card img {
         border-radius: 5px 5px 0 0;
@@ -33,13 +46,13 @@ const {title, img} = Astro.props
         object-fit: cover;
         object-position: center;
     }
-    
+
     .card a {
         width: 300px;
         height: 100px;
         display: flex;
         text-decoration: none;
-        
+
         flex-direction: column;
         align-items: center;
         /*background-image:url(../asset/servicioH.jpg) ;
@@ -49,15 +62,12 @@ const {title, img} = Astro.props
         background-repeat: no-repeat;
         border: 2px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);*/
-        
+
         transition: 0.5s ease-in-out;
-        
     }
     .card a:hover {
         transform: scale(1.1);
     }
-
-
 
     .descrip {
         background-color: rgb(189, 0, 33);
@@ -66,11 +76,7 @@ const {title, img} = Astro.props
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 0 0 5px 5px ;
-        
-        
-        
-        
+        border-radius: 0 0 5px 5px;
     }
     .descrip H3 {
         color: #fff;
@@ -82,9 +88,4 @@ const {title, img} = Astro.props
         color: #fff;
         padding-left: 5px;
     }
-        
-    
-
-    
-    
 </style>

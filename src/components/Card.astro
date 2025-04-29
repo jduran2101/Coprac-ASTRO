@@ -21,7 +21,6 @@ const { href, title, body } = Astro.props;
 </div>
 <style>
 	.link-card {
-		
 		width: 500px;
 		height: 200px;
 		list-style: none;
@@ -32,10 +31,25 @@ const { href, title, body } = Astro.props;
 		background-size: 400%;
 		border-radius: 7px;
 		background-position: 100%;
-		
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		animation: appear linear;
+		animation-timeline: view();
+		animation-range: entry 0% cover 40%;
 	}
+	@keyframes appear {
+		from {
+			opacity: 0;
+			/*scale: 0.5;*/
+			transform: translateX(-100px);
+		}
+		to {
+			opacity: 1;
+			/*scale: 1;*/
+			transform: translateX(0px);
+		}
+	}
+
 	.link-card > a {
 		width: 100%;
 		text-decoration: none;
@@ -51,8 +65,7 @@ const { href, title, body } = Astro.props;
 		margin: 0;
 		font-weight: 400;
 		font-size: 20px;
-		
-		
+
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {
@@ -61,15 +74,15 @@ const { href, title, body } = Astro.props;
 		margin-bottom: 0;
 		font-weight: 400;
 	}
-	@media (max-width: 900px){
+	@media (max-width: 900px) {
 		.link-card {
-			border-radius: 50%;
+			
 			width: 350px;
-			height: 350px;
+			height: 100px;
 		}
 		.link-card > a {
 			width: 98%;
-			border-radius: 50%;
+			
 			border: 3px solid red;
 			animation: move 5s ease-in-out infinite;
 			transition: all 1s ease-in-out;
@@ -79,26 +92,19 @@ const { href, title, body } = Astro.props;
 				border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 			}
 			50% {
-				border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; 
+				border-radius: 70% 40% 20% 10% / 10% 30% 10% 20%;
 			}
 			100% {
 				border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 			}
-			
 		}
-
-
-
-
-
-
-
-
-		h2, p {
+        h2 {
 			text-align: center;
-			padding-top: 50px;
-			
+			font-size: 18px;
+		}
+		
+		p {
+		   display: none;
 		}
 	}
-	
 </style>
