@@ -2,12 +2,13 @@
 interface Props {
     title: string;
     img: string;
+    link: string ;
 }
-const { title, img } = Astro.props;
+const { title, img, link } = Astro.props;
 ---
 
 <div class="card">
-    <a href="">
+    <a href={link} target="_blank">
         <img src={img} alt="" />
         <div class="descrip">
             <svg
