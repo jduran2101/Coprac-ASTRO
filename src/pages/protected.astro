@@ -2,7 +2,20 @@
 import TablaDeusuarios from "../components/dashboard/TablaDeusuarios.astro";
 import ServiceCar from "../components/dashboard/ServiceCar.astro";
 import Dashcard from "../components/dashboard/Dashcard.astro";
+import { firebase } from "../firebase/config";
 import "@fontsource-variable/quicksand";
+import { usuarioss } from "../data/usuarios.json";
+
+const romeo = JSON.stringify(usuarioss);
+const juli = JSON.parse(romeo);
+const userfire = firebase.auth.currentUser;
+const newuser = juli.find((e) => e.email == userfire.email);
+console.log(newuser);
+const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
+
+/*const newuser = users.find(e => e.email == usuario.email)
+ console.log(newuser)
+ const {name} = newuser */
 ---
 
 <!doctype html>
@@ -19,6 +32,22 @@ import "@fontsource-variable/quicksand";
                 <button class="out" id="logout">Salir</button>
             </div>
             <p class="time">{new Date().toLocaleString()}</p>
+
+            <article class="person">
+                <img src="/asset/user2.png" alt="" />
+                <div class="body-info">
+                    <div class="person-info">
+                        <h3>{nombre}</h3>
+                        <h4>Revisacion Medica - {fecha}</h4>
+                        <h4>Habilitacion - <span>{habilitacion}</span></h4>
+                        <h4>{email}</h4>
+                    </div>
+                    <div class="person-data">
+                        <a href={recibouno}>recibo uno</a>
+                        <a href={recibodos}>recibo dos</a>
+                    </div>
+                </div>
+            </article>
             <section class="firstbox">
                 <Dashcard
                     titulo="PRACTICOS"
@@ -41,13 +70,12 @@ import "@fontsource-variable/quicksand";
                 <ServiceCar />
             </section>
             <section class="threebox">
-                <Dashcard 
-                titulo="INF. FINANCIERO"
-                img="/asset/informefin.webp"
-                link="https://drive.google.com/file/d/1fK70tPrrou3f3eFubuix1F2B7s3O39bC/view?usp=sharing"
-                 />
-                <Dashcard titulo="ULTIMO BALANCE" 
-                img="/asset/balances.webp" />
+                <Dashcard
+                    titulo="INF. FINANCIERO"
+                    img="/asset/informefin.webp"
+                    link="https://drive.google.com/file/d/1fK70tPrrou3f3eFubuix1F2B7s3O39bC/view?usp=sharing"
+                />
+                <Dashcard titulo="ULTIMO BALANCE" img="/asset/balances.webp" />
                 <Dashcard
                     titulo="REGLAMENTO de ORG."
                     img="/asset/Coprac2.webp"
@@ -83,8 +111,13 @@ import "@fontsource-variable/quicksand";
         box-sizing: border-box;
         font-family: "Quicksand Variable", sans-serif;
     }
+    h4, h3 {
+        padding: 0;
+        margin: 0;
+    }
     .header {
         width: 90%;
+        height: 70px;
         margin: 0 auto;
         border-bottom: 2px solid rgb(189, 0, 33);
         display: flex;
@@ -116,7 +149,7 @@ import "@fontsource-variable/quicksand";
     .firstbox {
         width: 90%;
         margin: 0 auto;
-        padding-top: 50px;
+        padding-top: 25px;
         height: 150px;
         display: flex;
         justify-content: space-evenly;
@@ -141,8 +174,73 @@ import "@fontsource-variable/quicksand";
         justify-content: space-evenly;
         align-items: center;
     }
+
+    
+    
+    .person {
+        margin: 10px auto 10px;
+        background-color: #f0e9e9;
+        overflow: hidden;
+        width: 700px;
+        height: 200px;
+        border-radius: 10px;
+        border: 3px solid rgb(189, 0, 33);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        img {
+            width: 150px;
+            padding: 5px;
+            border-radius: 85% 15% 59% 41% / 30% 62% 38% 70% ;
+            background-color: rgb(189, 0, 33);
+        }
+    }
+    .body-info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 550px;
+        clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%) ;
+        background-color: rgb(52, 52, 51);
+        
+    }
+    .person-info {
+        padding: 15px;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        h3 {
+            color: #fff;
+            font-size: 24px;
+        }
+        h4 {
+            color: #fff;
+        }
+    }
+    .person-data {
+        
+        height: 70px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        a {
+            color: #fff;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 5px 20px ;
+            background-color: rgb(189, 0, 33);
+        }
+    }
+
     @media (max-width: 900px) {
-        .firstbox{
+        .firstbox {
             width: 100%;
             height: 350px;
             padding-top: 10px;
@@ -162,6 +260,16 @@ import "@fontsource-variable/quicksand";
             display: flex;
             flex-direction: column;
         }
-
+        .person {
+            width: 92%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .body-info {
+            width: 100%;
+            clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+        }
     }
 </style>

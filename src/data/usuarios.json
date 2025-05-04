@@ -1,70 +1,93 @@
 {
-    "usuarios": [
+    "usuarioss": [ 
         {
             "nombre": "María López",
-            "email": "maria.lopez@example.com",
+            "email": "marialopez@example.com",
             "fecha": "2023-05-15",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Carlos Ruiz",
             "email": "carlos.ruiz@example.com",
             "fecha": "2022-11-30",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Ana García",
             "email": "ana.garcia@example.com",
             "fecha": "2024-01-20",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
+
         },
         {
-            "nombre": "Javier Méndez",
-            "email": "javier.mendez@example.com",
+            "nombre": "admin",
+            "email": "admin@admin.com",
             "fecha": "2023-08-10",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Lucía Fernández",
             "email": "lucia.fernandez@example.com",
             "fecha": "2024-03-05",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Pedro Sánchez",
             "email": "pedro.sanchez@example.com",
             "fecha": "2023-07-22",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Sofía Ramírez",
             "email": "sofia.ramirez@example.com",
             "fecha": "2024-02-14",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Diego Torres",
             "email": "diego.torres@example.com",
             "fecha": "2022-09-05",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Elena Castro",
             "email": "elena.castro@example.com",
             "fecha": "2023-12-01",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Miguel Ángel Reyes",
             "email": "miguel.reyes@example.com",
             "fecha": "2024-04-18",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         },
         {
             "nombre": "Isabel Mendoza",
             "email": "isabel.mendoza@example.com",
             "fecha": "2023-10-30",
-            "habilitacion": "1809"
+            "habilitacion": "1809",
+            "recibouno":"febrero",
+            "recibodos":"marzo"
         }
     ]
 }
