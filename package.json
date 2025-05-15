@@ -15,6 +15,7 @@
     "@fontsource-variable/quicksand": "^5.2.6",
     "@fontsource/abel": "^5.0.8",
     "astro": "^5.7.9",
+    "chart.js": "^4.4.9",
     "firebase": "^10.14.1",
     "sweetalert2": "^11.17.2"
   }

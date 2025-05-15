@@ -5,6 +5,7 @@ import Dashcard from "../components/dashboard/Dashcard.astro";
 import { firebase } from "../firebase/config";
 import "@fontsource-variable/quicksand";
 import { usuarioss } from "../data/usuarios.json";
+import CardChart from "../components/dashboard/CardChart.astro";
 
 const romeo = JSON.stringify(usuarioss);
 const juli = JSON.parse(romeo);
@@ -48,41 +49,37 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
                     </div>
                 </div>
             </article>
-            <section class="firstbox">
-                <Dashcard
-                    titulo="PRACTICOS"
-                    link="#pilot"
-                    img="/asset/practico.jpg"
-                />
-                <Dashcard
-                    titulo="PIZARRA web"
-                    link="http://pilotmanagercoprac.ddns.net/Account/GoInfoMovimientos?token=bd7f3f0a-a1de-4ae9-85aa-55dcaf49cbf1"
-                    img="/asset/104.webp"
-                />
-                <Dashcard
-                    titulo="CRONOGRAMA DE FRANCOS"
-                    link="https://docs.google.com/spreadsheets/d/16fb6meAHXhXH3G58hbWSvsAbdr5x_Qct/edit?usp=drive_link&ouid=108091066637960145705&rtpof=true&sd=true"
-                    img="/asset/excel2.png"
-                />
-            </section>
+            <section class="first-main">
+                <section class="firstbox">
+                    <Dashcard
+                        titulo="PIZARRA web"
+                        link="http://pilotmanagercoprac.ddns.net/Account/GoInfoMovimientos?token=bd7f3f0a-a1de-4ae9-85aa-55dcaf49cbf1"
+                        img="/asset/104.webp"
+                    />
+                    <Dashcard
+                        titulo="CRONOGRAMA DE FRANCOS"
+                        link="https://docs.google.com/spreadsheets/d/16fb6meAHXhXH3G58hbWSvsAbdr5x_Qct/edit?usp=drive_link&ouid=108091066637960145705&rtpof=true&sd=true"
+                        img="/asset/excel2.png"
+                    />
+                </section>
 
-            <section class="secondbox">
-                <ServiceCar />
-            </section>
-            <section class="threebox">
-                <Dashcard
-                    titulo="INF. FINANCIERO"
-                    img="/asset/informefin.webp"
-                    link="https://drive.google.com/file/d/1fK70tPrrou3f3eFubuix1F2B7s3O39bC/view?usp=sharing"
-                />
-                <Dashcard titulo="ULTIMO BALANCE" img="/asset/balances.webp" />
-                <Dashcard
-                    titulo="REGLAMENTO de ORG."
-                    img="/asset/Coprac2.webp"
-                    link="https://drive.google.com/file/d/1YN4bjgk81oqkgyNc7CB4qRJk5SvXLSTw/view?usp=sharing"
-                />
+                <section class="secondbox">
+                    <ServiceCar />
+                </section>
+                <section class="threebox">
+                    <Dashcard
+                        titulo="INF. FINANCIERO"
+                        img="/asset/informefin.webp"
+                        link="https://drive.google.com/file/d/1fK70tPrrou3f3eFubuix1F2B7s3O39bC/view?usp=sharing"
+                    />
+                    <Dashcard
+                        titulo="ULTIMO BALANCE"
+                        img="/asset/balances.webp"
+                    />
+                </section>
             </section>
             <TablaDeusuarios />
+            <CardChart />
         </main>
     </body>
     <script>
@@ -104,14 +101,19 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
         margin: 0;
         padding: 0;
         width: 100%;
-
         margin: auto;
         max-width: 1280px;
-        background-color: rgb(52, 52, 51);
+        background: #292f4a;
+        background: radial-gradient(
+            circle,
+            rgba(41, 47, 74, 1) 0%,
+            rgba(2, 6, 23, 1) 90%
+        );
         box-sizing: border-box;
         font-family: "Quicksand Variable", sans-serif;
     }
-    h4, h3 {
+    h4,
+    h3 {
         padding: 0;
         margin: 0;
     }
@@ -146,8 +148,16 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
         font-size: 18px;
         text-align: center;
     }
+    .first-main {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        
+        background-color: #0b1422;
+        border-radius: 15px;
+    }
     .firstbox {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
         padding-top: 25px;
         height: 150px;
@@ -157,7 +167,7 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
     }
 
     .secondbox {
-        width: 90%;
+        width: 80%;
         height: 150px;
         margin: 0 auto;
 
@@ -166,34 +176,45 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
         align-items: center;
     }
     .threebox {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
-
+        padding-bottom: 25px;
         height: 150px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
 
-    
-    
     .person {
-        margin: 10px auto 10px;
-        background-color: #f0e9e9;
+        margin: 20px auto 30px;
+        background: #536976; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+            to right,
+            #292e49,
+            #536976
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+            to right,
+            #292e49,
+            #536976
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
         overflow: hidden;
         width: 700px;
-        height: 200px;
+        height: 250px;
         border-radius: 10px;
-        border: 3px solid rgb(189, 0, 33);
+        border: 1px solid #111c2d;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 10px;
         img {
-            width: 150px;
+            width: 180px;
+            border: 5px solid #111c2d;
+            margin: 15px;
             padding: 5px;
-            border-radius: 85% 15% 59% 41% / 30% 62% 38% 70% ;
-            background-color: rgb(189, 0, 33);
+            border-radius: 85% 15% 59% 41% / 30% 62% 38% 70%;
+            background-color: #fff;
         }
     }
     .body-info {
@@ -201,9 +222,6 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
         flex-direction: column;
         height: 100%;
         width: 550px;
-        clip-path: polygon(11% 0, 100% 0%, 100% 100%, 0% 100%) ;
-        background-color: rgb(52, 52, 51);
-        
     }
     .person-info {
         padding: 15px;
@@ -215,14 +233,14 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
         gap: 10px;
         h3 {
             color: #fff;
-            font-size: 24px;
+            font-size: 26px;
         }
         h4 {
             color: #fff;
         }
     }
     .person-data {
-        
+        border-top: 1px solid #111c2d;
         height: 70px;
         padding: 10px;
         display: flex;
@@ -232,17 +250,18 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
         a {
             color: #fff;
             border-radius: 5px;
+            border: 1px solid #111c2d;
+            background-color: #0b1422;
             font-size: 18px;
             text-decoration: none;
-            padding: 5px 20px ;
-            background-color: rgb(189, 0, 33);
+            padding: 10px 22px;
         }
     }
 
     @media (max-width: 900px) {
         .firstbox {
             width: 100%;
-            height: 350px;
+            height: 230px;
             padding-top: 10px;
             display: flex;
             flex-direction: column;
@@ -255,21 +274,36 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
         }
         .threebox {
             width: 100%;
-            height: 350px;
+            height: 230px;
             padding-top: 0px;
+            padding-bottom: 8px;
             display: flex;
             flex-direction: column;
         }
         .person {
             width: 92%;
             height: 400px;
+            border-radius: 25px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            img {
+                width: 120px;
+                padding: 0;
+            }
         }
         .body-info {
             width: 100%;
-            clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+            
+        }
+        .person-info {
+            padding: 0;
+            h3 {
+                font-size: 26px;
+            }
+            h4 {
+                font-size: 18px;
+            }
         }
     }
 </style>

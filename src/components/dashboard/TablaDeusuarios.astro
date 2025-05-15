@@ -3,11 +3,12 @@ import { usuarioss } from "../../data/usuarios.json";
 ---
 
 <section>
-    <h3 id="pilot">-- PRACTICOS --</h3>
+    <h3 id="pilot">- PRACTICOS -</h3>
     <table class="table-fixed">
         <thead>
             <tr>
                 <th class="habi">Habilitacion</th>
+                
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>R.Medica</th>
@@ -24,7 +25,8 @@ import { usuarioss } from "../../data/usuarios.json";
                 usuarioss.map((usuario) => (
                     <tr>
                         <td>{usuario.habilitacion}</td>
-                        <td>{usuario.nombre}</td>
+                        <td><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><circle cx="15" cy="6" r="3" fill="currentColor" opacity="0.4"/><ellipse cx="16" cy="17" fill="currentColor" opacity="0.4" rx="5" ry="3"/><circle cx="9.001" cy="6" r="4" fill="currentColor"/><ellipse cx="9.001" cy="17.001" fill="currentColor" rx="7" ry="4"/></svg>-
+                            {usuario.nombre}</td>
                         <td>{usuario.email}</td>
                         <td>{usuario.fecha}</td>
                     </tr>
@@ -37,35 +39,36 @@ import { usuarioss } from "../../data/usuarios.json";
 <style>
     section {
         width: 90%;
-        padding-top: 70px;
+        padding-top: 50px;
         margin: 0 auto;
-        height: 800px;
+        height: 500px;
         h3 {
-            font-size: 36px;
+            font-size: 32px;
             color: #fff;
             text-align: center;
         }
     }
     section table {
         border-collapse: collapse;
-        border: 2px solid rgb(189, 0, 33);
-
+        border: 1px solid #111c2d;
         width: 80%;
         margin: 0 auto;
+        background-color: #0b1422;
+        
     }
     table thead {
         color: #fff;
         
-        background-color: rgb(189, 0, 33);
+        background-color: transparent;
         position: sticky;
         top: 0;
     }
     td,
     th {
-        padding: 10px;
+        padding: 18px;
         text-align: center;
         color: #fff;
-        border-bottom: 1px solid rgb(189, 0, 33);
+        border-bottom: 1px solid #111c2d;
     }
    
     .table-fixed {
@@ -73,17 +76,43 @@ import { usuarioss } from "../../data/usuarios.json";
         height: 400px;
         overflow-y: auto;
         border-radius: 10px;
+    }
+    .table-fixed::-webkit-scrollbar {
+        width: 5px;
+        background-color: rgb(75, 75, 75);
+        border-radius: 15px;
+    }
+    .table-fixed::-webkit-scrollbar-thumb {
+        background-color: rgb(126, 121, 122);
+        border-radius: 5px;
+    }
+        
+    .table-fixed, tr {
+        width: 763px;
+        transition: all ease-in .2s;
         
     }
-    .table-fixed, tr {
-        
-        width: 763px;
+    .table-fixed, tr:hover {
+        background-color: #111c2d;
     }
     .table-fixed, tr>th {
         
         width: 250px;
         .habi {
             width: 100px;
+        }
+    }
+    td {
+        font-size: 14px;
+        position: relative;
+        
+    
+        svg {
+            color: chocolate;
+           position: absolute;
+           top: 10px;
+           left: 20px;
+            
         }
     }
     @media (max-width: 900px) {
@@ -101,6 +130,9 @@ import { usuarioss } from "../../data/usuarios.json";
         }
         td {
             font-size: 13px;
+            svg {
+                left: 2px;
+            }
         }
     }
 </style>
