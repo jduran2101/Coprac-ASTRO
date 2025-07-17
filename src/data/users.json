@@ -1,0 +1,285 @@
+[
+  {
+    "habilitacion": "1596",
+    "nombre": "Javier Martin Abal",
+    "correo": "juan.perez@example.com",
+    "revisacion_medica": "18/01/2025",
+    "recorrido_chaleco_salvavidas": "08/05/2025"
+  },
+  {
+    "habilitacion": "1589",
+    "nombre": "Gustavo Hernan Acuña",
+    "correo": "maria.garcia@example.com",
+    "revisacion_medica": "10/01/2026",
+    "recorrido_chaleco_salvavidas": "05/12/2025"
+  },
+  {
+    "habilitacion": "1189/9",
+    "nombre": "German Hernesto Ahuntchain",
+    "correo": "carlos.lopez@example.com",
+    "revisacion_medica": "05/02/2027",
+    "recorrido_chaleco_salvavidas": "15/04/2026"
+  },
+  {
+    "habilitacion": "1493",
+    "nombre": "Sebastian Ignacio Alberino",
+    "correo": "ana.martinez@example.com",
+    "revisacion_medica": "12/02/2027",
+    "recorrido_chaleco_salvavidas": "28/12/2024"
+  },
+  {
+    "habilitacion": "1109/2",
+    "nombre": "Daniel Alejandro Arce",
+    "correo": "luis.rodriguez@example.com",
+    "revisacion_medica": "13/03/2027",
+    "recorrido_chaleco_salvavidas": "07/09/2025"
+  },
+  {
+    "habilitacion": "1543",
+    "nombre": "Daniel Gregorio Avataneo",
+    "correo": "laura.sanchez@example.com",
+    "revisacion_medica": "21/11/2026",
+    "recorrido_chaleco_salvavidas": "27/02/2025"
+  },
+  {
+    "habilitacion": "1314/0",
+    "nombre": "Carlos Roberto Bajales",
+    "correo": "pedro.gomez@example.com",
+    "revisacion_medica": "08/06/2025",
+    "recorrido_chaleco_salvavidas": "29/02/2025"
+  },
+  {
+    "habilitacion": "1597",
+    "nombre": "Claudio Leonel Balbuena",
+    "correo": "sofia.diaz@example.com",
+    "revisacion_medica": "06/03/2026",
+    "recorrido_chaleco_salvavidas": "19/12/2024"
+  },
+  {
+    "habilitacion": "1328/0",
+    "nombre": "Juan Ramon Barrios",
+    "correo": "jorge.ruiz@example.com",
+    "revisacion_medica": "13/01/2027",
+    "recorrido_chaleco_salvavidas": "05/02/2025"
+  },
+  {
+    "habilitacion": "1573",
+    "nombre": "Luis Octavio Benko",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "09/10/2025",
+    "recorrido_chaleco_salvavidas": "31/10/2025"
+  },
+  {
+    "habilitacion": "1459",
+    "nombre": "Matias Federico Bruera",
+    "correo": "juan.perez@example.com",
+    "revisacion_medica": "22/12/2025",
+    "recorrido_chaleco_salvavidas": "13/02/2026"
+  },
+  {
+    "habilitacion": "1448",
+    "nombre": "Christian Alejandro Calascione",
+    "correo": "maria.garcia@example.com",
+    "revisacion_medica": "19/07/2025",
+    "recorrido_chaleco_salvavidas": "16/07/2025"
+  },
+  {
+    "habilitacion": "1347/3",
+    "nombre": "Sergio Rene Careta",
+    "correo": "carlos.lopez@example.com",
+    "revisacion_medica": "18/03/2027",
+    "recorrido_chaleco_salvavidas": "10/02/2026"
+  },
+  {
+    "habilitacion": "1125/6",
+    "nombre": "Juan Cancio Chavez",
+    "correo": "ana.martinez@example.com",
+    "revisacion_medica": "04/12/2026",
+    "recorrido_chaleco_salvavidas": "29/01/2026"
+  },
+  {
+    "habilitacion": "1563",
+    "nombre": "Maximiliano Ariel Chiaparro",
+    "correo": "luis.rodriguez@example.com",
+    "revisacion_medica": "10/11/2025",
+    "recorrido_chaleco_salvavidas": "04/05/2025"
+  },
+  {
+    "habilitacion": "1468",
+    "nombre": "Daniel Eduardo Correa",
+    "correo": "laura.sanchez@example.com",
+    "revisacion_medica": "05/02/2027",
+    "recorrido_chaleco_salvavidas": "16/02/2025"
+  },
+  {
+    "habilitacion": "1642",
+    "nombre": "Martin Leandro Conte",
+    "correo": "pedro.gomez@example.com",
+    "revisacion_medica": "06/07/2025",
+    "recorrido_chaleco_salvavidas": "13/0372026"
+  },
+  {
+    "habilitacion": "1659",
+    "nombre": "Fernando javier D'amico Figueroa",
+    "correo": "sofia.diaz@example.com",
+    "revisacion_medica": "10/04/2026",
+    "recorrido_chaleco_salvavidas": "25/04/2026"
+  },
+  {
+    "habilitacion": "1491",
+    "nombre": "Ariel Omar Delgado",
+    "correo": "jorge.ruiz@example.com",
+    "revisacion_medica": "15/11/2025",
+    "recorrido_chaleco_salvavidas": "23/05/2025"
+  },
+  {
+    "habilitacion": "1287/9",
+    "nombre": "Carlos Antonio Duarte",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "14/04/2027",
+    "recorrido_chaleco_salvavidas": "12/05/2026"
+  },
+   {
+    "habilitacion": "1137/3",
+    "nombre": "Daniel Jose Duarte",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1390/1",
+    "nombre": "Heriberto Duarte",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1598",
+    "nombre": "Juan Jose Duran",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1248/7",
+    "nombre": "Fidel Ernesto Fernandez",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1612",
+    "nombre": "Fabricio Matias Franco",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1503",
+    "nombre": "Gustavo Angel Gallardo Monroy",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1545",
+    "nombre": "Javier Alejandro Gioiosa",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1598",
+    "nombre": "Mauro Alberto Gomez",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1614",
+    "nombre": "Angel Matias Gonzalez Centurion",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1294/4",
+    "nombre": "Luis Fabian Heron Kleba",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1382/7",
+    "nombre": "Nicolas Martin Herrera ",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1522",
+    "nombre": "Ivan Alberto Ladanaj",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1649",
+    "nombre": "Edgar Matias Lazarte",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1231/8",
+    "nombre": "Claudio Fabian Lopez",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1254/6",
+    "nombre": "Geronimo Enrique Lopez",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1591",
+    "nombre": "Jorge Ariel Machado",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1211/9",
+    "nombre": "Jorge Ignacio Machado",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1383/6",
+    "nombre": "Facundo Jose Marrapodi",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  },
+   {
+    "habilitacion": "1489",
+    "nombre": "Jose Alfredo Martinez",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "14/04/2027",
+    "recorrido_chaleco_salvavidas": "12/05/2026"
+  },
+   {
+    "habilitacion": "1385/6",
+    "nombre": "Roman Gonzalo Martinez",
+    "correo": "elena.hernandez@example.com",
+    "revisacion_medica": "",
+    "recorrido_chaleco_salvavidas": ""
+  }
+  
+
+  
+]

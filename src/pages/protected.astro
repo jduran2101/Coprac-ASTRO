@@ -4,19 +4,23 @@ import ServiceCar from "../components/dashboard/ServiceCar.astro";
 import Dashcard from "../components/dashboard/Dashcard.astro";
 import { firebase } from "../firebase/config";
 import "@fontsource-variable/quicksand";
-import { usuarioss } from "../data/usuarios.json";
+//import { usuarioss } from "../data/usuarios.json";
 import CardChart from "../components/dashboard/CardChart.astro";
+import { collection, getDocs } from "firebase/firestore";
+//firestor datos de base de datos
 
-const romeo = JSON.stringify(usuarioss);
-const juli = JSON.parse(romeo);
+const querySnapshot = await getDocs(collection(firebase.db , "userscp"))
+const {docs} = querySnapshot
+const romeo = docs.map(contactos => ({
+    id:contactos.id,
+    datos: contactos.data()
+}))
+
 const userfire = firebase.auth.currentUser;
-const newuser = juli.find((e) => e.email == userfire.email);
-console.log(newuser);
-const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
-
-/*const newuser = users.find(e => e.email == usuario.email)
- console.log(newuser)
- const {name} = newuser */
+const newuser= romeo.find((e) => e.datos.email == userfire.email);
+    
+//console.log(newuser)
+    
 ---
 
 <!doctype html>
@@ -38,14 +42,14 @@ const { nombre, email, fecha, habilitacion, recibouno, recibodos } = newuser;
                 <img src="/asset/user2.png" alt="" />
                 <div class="body-info">
                     <div class="person-info">
-                        <h3>{nombre}</h3>
-                        <h4>Revisacion Medica - {fecha}</h4>
-                        <h4>Habilitacion - <span>{habilitacion}</span></h4>
-                        <h4>{email}</h4>
+                        <h3>{newuser.datos.nombre}</h3>
+                        <h4>Revisacion Medica - {newuser.datos.fecha} </h4>
+                        <h4>Habilitacion - <span>{newuser.datos.habilitacion}</span></h4>
+                        <h4>{newuser.datos.email}</h4>
                     </div>
                     <div class="person-data">
-                        <a href={recibouno}>recibo uno</a>
-                        <a href={recibodos}>recibo dos</a>
+                        <a href=>recibo uno</a>
+                        <a href=>recibo dos</a>
                     </div>
                 </div>
             </article>
