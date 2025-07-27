@@ -1,5 +1,17 @@
 ---
 import { usuarioss } from "../../data/usuarios.json";
+import { firebase } from "../../firebase/config";
+import { collection, getDocs } from "firebase/firestore";
+
+const querySnapshot = await getDocs(collection(firebase.db , "userscp"))
+const { docs } = querySnapshot 
+const usuarioco = docs.map (contacto => ({
+    id:contacto.id ,
+    datos:contacto.data()
+})
+)
+
+
 ---
 
 <section>
@@ -9,26 +21,21 @@ import { usuarioss } from "../../data/usuarios.json";
             <tr>
                 <th class="habi">Habilitacion</th>
                 
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>R.Medica</th>
+                <th class="name">Nombre</th>
+                <th class="email">Cel</th>
+                <th class="medica">R.Medica</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td> 1797</td>
-                <td>Federico Nada</td>
-                <td>mmmmmm@gmail.com</td>
-                <td>20nov2030</td>
-            </tr>
+            
             {
-                usuarioss.map((usuario) => (
+                usuarioco.map((usuario) => (
                     <tr>
-                        <td>{usuario.habilitacion}</td>
+                        <td>{usuario.datos.habilitacion}</td>
                         <td><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><circle cx="15" cy="6" r="3" fill="currentColor" opacity="0.4"/><ellipse cx="16" cy="17" fill="currentColor" opacity="0.4" rx="5" ry="3"/><circle cx="9.001" cy="6" r="4" fill="currentColor"/><ellipse cx="9.001" cy="17.001" fill="currentColor" rx="7" ry="4"/></svg>-
-                            {usuario.nombre}</td>
-                        <td>{usuario.email}</td>
-                        <td>{usuario.fecha}</td>
+                            {usuario.datos.nombre}</td>
+                        <td>01133460158</td>
+                        <td>{usuario.datos.fecha}</td>
                     </tr>
                 ))
             }
@@ -129,10 +136,17 @@ import { usuarioss } from "../../data/usuarios.json";
             width: 95%;
         }
         td {
+            padding: 10px;
             font-size: 13px;
             svg {
-                left: 2px;
+                left: -10px;
             }
+        }
+        .table-fixed, tr>th {
+            .name{
+                min-width: 120px;
+            }
+
         }
     }
 </style>

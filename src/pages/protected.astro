@@ -1,5 +1,5 @@
 ---
-import TablaDeusuarios from "../components/dashboard/TablaDeusuarios.astro";
+
 import ServiceCar from "../components/dashboard/ServiceCar.astro";
 import Dashcard from "../components/dashboard/Dashcard.astro";
 import { firebase } from "../firebase/config";
@@ -18,7 +18,7 @@ const romeo = docs.map(contactos => ({
 
 const userfire = firebase.auth.currentUser;
 const newuser= romeo.find((e) => e.datos.email == userfire.email);
-    
+     
 //console.log(newuser)
     
 ---
@@ -32,7 +32,7 @@ const newuser= romeo.find((e) => e.datos.email == userfire.email);
     </head>
     <body>
         <main>
-            <div class="header">
+           <div class="header">
                 <h3>CO<span>PRAC</span> LTD.</h3>
                 <button class="out" id="logout">Salir</button>
             </div>
@@ -48,7 +48,7 @@ const newuser= romeo.find((e) => e.datos.email == userfire.email);
                         <h4>{newuser.datos.email}</h4>
                     </div>
                     <div class="person-data">
-                        <a href=>recibo uno</a>
+                        <a href='/protected/boleta' target="_blank">Boleta</a>
                         <a href=>recibo dos</a>
                     </div>
                 </div>
@@ -65,6 +65,13 @@ const newuser= romeo.find((e) => e.datos.email == userfire.email);
                         link="https://docs.google.com/spreadsheets/d/16fb6meAHXhXH3G58hbWSvsAbdr5x_Qct/edit?usp=drive_link&ouid=108091066637960145705&rtpof=true&sd=true"
                         img="/asset/excel2.png"
                     />
+                    <Dashcard 
+                        titulo="PRACTICOS"
+                        link="/protected/team"
+                        img="/asset/buquewep.webp"
+                    />
+
+
                 </section>
 
                 <section class="secondbox">
@@ -82,7 +89,7 @@ const newuser= romeo.find((e) => e.datos.email == userfire.email);
                     />
                 </section>
             </section>
-            <TablaDeusuarios />
+            
             <CardChart />
         </main>
     </body>

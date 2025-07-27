@@ -1,0 +1,66 @@
+---
+import TablaDeusuarios from "../../components/dashboard/TablaDeusuarios.astro";
+import "@fontsource-variable/quicksand";
+
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pilotos</title>
+    </head>
+    <body>
+        <main>
+            <div class="header">
+                <h3>CO<span>PRAC</span> LTD.</h3>
+            </div>
+
+            <TablaDeusuarios />
+        </main>
+    </body>
+</html>
+
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        margin: auto;
+        max-width: 1280px;
+        background: #292f4a;
+        background: radial-gradient(
+            circle,
+            rgba(41, 47, 74, 1) 0%,
+            rgba(2, 6, 23, 1) 90%
+        );
+        box-sizing: border-box;
+        font-family: "Quicksand Variable", sans-serif;
+    }
+    h4,
+    h3 {
+        padding: 0;
+        margin: 0;
+    }
+    .header {
+        width: 90%;
+        height: 70px;
+        margin: 0 auto;
+        border-bottom: 2px solid rgb(189, 0, 33);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            font-size: 34px;
+            color: #fff;
+        }
+        span {
+            color: rgb(189, 0, 33);
+        }
+    }
+</style>

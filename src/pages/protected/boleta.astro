@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Boleta</title>
+    </head>
+
+    <body>
+        <form action="" id="form">
+            <label for="">Agencia</label>
+            <input type="text" name="agencia" id="agencia" />
+            <label for="">Despacho Num:</label>
+            <input type="text" name="despacho" id="despacho" />
+            <label for="">IMO</label>
+            <input type="text" name="imo" id="imo" />
+            <label for="">Nombre Buque</label>
+            <input type="text" name="buque" id="buque" />
+            <label for="">Bandera</label>
+            <input type="text" name="bandera" id="bandera" />
+
+            <div class="datosbuque">
+                <input
+                    type="text"
+                    name="eslora"
+                    id="eslora"
+                    placeholder="Eslora"
+                />
+                <input
+                    type="text"
+                    name="manga"
+                    id="manga"
+                    placeholder="Manga"
+                />
+                <input
+                    type="text"
+                    name="puntal"
+                    id="puntal"
+                    placeholder="Puntal"
+                />
+                <input type="text" name="coe" id="coe" placeholder="Coef." />
+            </div>
+            <section class="tiemposdos">
+                <div class="inicio">
+                    <label for="time">Presentacion</label>
+                    <input
+                        type="text"
+                        name="fechapre"
+                        id="fechapre"
+                        placeholder="fecha"
+                    /><input
+                        type="time"
+                        id="presentacion"
+                        name="presentacion"
+                    />
+                </div>
+                <div class="inicio">
+                    <label for="">Inicio</label>
+                    <input
+                        type="text"
+                        name="fechainicio"
+                        id="fechainicio"
+                        placeholder="fecha"
+                    /><input type="time" id="inicio" name="inicio" />
+                </div>
+                <div class="inicio">
+                    <label for="">Final</label>
+                    <input
+                        type="text"
+                        id="fechafin"
+                        name="fechafin"
+                        placeholder="fecha"
+                    /><input type="time" id="final" name="final" />
+                </div>
+                <div class="inicio">
+                    <label for="">Lancha</label>
+                    <input
+                        type="text"
+                        id="fechalancha"
+                        name="fechalancha"
+                        placeholder="fecha"
+                    /><input type="time" name="lancha" id="lancha" />
+                </div>
+                <div class="inicio">
+                    <label for="">Tierra</label>
+                    <input
+                        type="text"
+                        id="fechatierra"
+                        name="fechatierra"
+                        placeholder="fecha"
+                    /><input type="time" name="tierra" id="tierra" />
+                </div>
+            </section>
+
+            <div class="datosdos">
+                <article class="calados">
+                    <input
+                        type="text"
+                        name="caladoproa"
+                        id="caladoproa"
+                        placeholder="calProa"
+                    />
+                    <input
+                        type="text"
+                        name="caladopopa"
+                        id="caladopopa"
+                        placeholder="calPopa"
+                    />
+                </article>
+                <article class="viaje">
+                    <input
+                        type="text"
+                        name="desde"
+                        id="desde"
+                        placeholder="Desde"
+                    />
+                    <input
+                        type="text"
+                        name="hasta"
+                        id="hasta"
+                        placeholder="Hasta"
+                    />
+                </article>
+                <input
+                    type="text"
+                    name="canal"
+                    id="canal"
+                    placeholder="Canal Nav."
+                />
+            </div>
+            <input
+                type="text"
+                name="nombrebuque"
+                id="nombrebuque"
+                placeholder="Nombre del buque"
+            />
+            <input
+                type="text"
+                name="matricula"
+                id="matricula"
+                placeholder="Matricula"
+            />
+            <div class="texta">
+                <label for="observaciones">Obervaciones y Maniobras</label>
+                <textarea name="observaciones" id="observaciones"></textarea>
+            </div>
+            <label for="">Practico</label>
+            <input type="text" placeholder="practico num-1" />
+            <span>Firmas (Capitan - Practico)</span>
+            <div class="signature">
+                <canvas id="canvass"></canvas>
+            </div>
+            <div class="signaturedos">
+                <canvas id="canvassdos"></canvas>
+            </div>
+            <button type="submit">Generar</button>
+            <button type="reset">Limpiar</button>
+        </form>
+    </body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+    <script src="/src/data/local.js"></script>
+</html>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap");
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        max-width: 1270px;
+        margin: 0 auto;
+        font-family: "Quicksand", sans-serif;
+        color: #ffff;
+           background: #292f4a;
+        background: radial-gradient(
+            circle,
+            rgba(41, 47, 74, 1) 0%,
+            rgba(2, 6, 23, 1) 90%
+        );
+    }
+    form {
+        background-color: #454444;
+        margin: 50px auto;
+        width: 450px;
+        height: 1500px;
+        border: 3px solid #850f0f;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+           box-shadow:
+            rgb(189, 0, 33, 0.35) 0px 50px 100px -20px,
+            rgb(189, 0, 33, 0.35) 0px 30px 60px -30px,
+            rgba(189, 0, 33, 0.35) 0px -2px 6px 0px inset;
+
+
+        input {
+            height: 37px;
+            font-size: 16px;
+            width: 80%;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid #454444;
+            font-family: "Quicksand", sans-serif;
+            outline: none;
+        }
+    }
+
+    form button {
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #850f0f;
+        margin-top: 20px;
+        outline: none;
+        border: 2px solid #850f0f;
+        background-color: #ffff;
+        cursor: pointer;
+    }
+    span {
+        padding-top: 20px;
+    }
+    .signature,
+    .signaturedos {
+        border: 1px solid #454444;
+        width: 320px;
+        height: 100px;
+        margin-top: 15px;
+
+        #canvass {
+            width: 100%;
+            height: 110px;
+            background-color: #ffff;
+            border-radius: 10px;
+            border: 2px solid #850f0f;
+        }
+        #canvassdos {
+            width: 100%;
+            height: 110px;
+            background-color: #ffff;
+            border-radius: 10px;
+            border: 2px solid #850f0f;
+        }
+    }
+    .datosbuque {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        input {
+            width: 80px;
+        }
+    }
+    .datosdos {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .calados {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        input {
+            width: 100px;
+        }
+    }
+    .viaje {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        input {
+            width: 230px;
+        }
+    }
+    .tiemposdos {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .inicio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input {
+            width: 85px;
+        }
+    }
+    .texta {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    textarea {
+        width: 95%;
+        height: 100px;
+        padding: 3px;
+    }
+</style>

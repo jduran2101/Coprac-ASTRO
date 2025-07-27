@@ -1,7 +1,7 @@
 import { defineMiddleware } from "astro:middleware";
 import { firebase } from "./firebase/config";
 
-const privateRout = ['/protected']
+const privateRout = ['/protected', '/protected/team', '/protected/boleta']
 
 /*export const onRequest = defineMiddleware(async ({ url }, next) => {
     if (privateRout.includes(url.pathname)) {
