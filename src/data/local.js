@@ -79,7 +79,7 @@ window.addEventListener("load", async () => {
     canvasdos.width = canvas.offsetWidth;
     signaturedos = new SignaturePad(canvasdos, {})
 
-    const image = await loadImage('/reciboco.jpg')
+    const image = await loadImage('/recibocop.jpg')
     //console.log(image)
 });
  let signature = null
@@ -90,7 +90,7 @@ async function generarPDF(buque, bandera,agencia, despacho,
     canal, buquename, matricula, observaciones, fechapre, presentacion,
     fechainicio, inicio, fechafin, final, fechalancha, lancha, fechatierra, tierra ) 
     {
-    const image = await loadImage('/reciboco.jpg');
+    const image = await loadImage('/recibocop.jpg');
     const signatureIma = signature.toDataURL();
     const signatureImados = signaturedos.toDataURL();
 
