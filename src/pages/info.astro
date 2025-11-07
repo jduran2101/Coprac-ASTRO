@@ -5,7 +5,7 @@ import LayoutLogin from "../layouts/LayoutLogin.astro";
 <LayoutLogin title="Register">
     <div class="form-act">
         <form>
-            <a href="/registro">⬅️ atras </a>
+            <a href="/registro">⬅️ Atras </a>
             <div class="inputdiv">
                 <label for="email">Email</label>
                 <input type="email" name="email" required/>
@@ -92,6 +92,7 @@ import LayoutLogin from "../layouts/LayoutLogin.astro";
         a {
             text-decoration: none;
             color: #fff;
+            font-weight: 600;
         }
         h3 {
             color: rgb(189, 0, 33);
@@ -154,12 +155,24 @@ import LayoutLogin from "../layouts/LayoutLogin.astro";
     }
      @media (max-width: 900px) {
         .form-act {
-            width: 380px;
-            height: 500px;
+            width: 370px;
+            height: 550px;
            
         }
         form {
             margin-top: 25px;
+        }
+        .inputdiv {
+            input {
+                height: 40px;
+                font-weight: 600;
+            }
+        }
+        .datos {
+            input {
+                height: 40px;
+                font-weight: 600;
+            }
         }
      }
 </style>

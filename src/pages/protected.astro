@@ -99,7 +99,7 @@ const newuser= romeo.find((e) => e.datos.email == userfire.email);
         const logOutelem = document.querySelector("#logout") as HTMLLIElement;
         logOutelem?.addEventListener("click", () => {
             actions.logout();
-            window.location.href = "/";
+            window.location.replace("/");
         });
     </script>
 </html>
