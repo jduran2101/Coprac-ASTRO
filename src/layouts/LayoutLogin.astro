@@ -1,0 +1,50 @@
+---
+import "@fontsource-variable/quicksand";
+import "@fontsource/abel";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+</head>
+<body>
+    <section>
+     <slot />
+    </section>
+    
+</body>
+</html>
+
+<style is:global>
+     * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Courier New", Courier, monospace;
+        font-family: "Quicksand Variable", sans-serif;
+    }
+      section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1280px;
+        height: 100vh;
+        background-image: url(/asset/piclumen.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    h4,
+	h3,
+	h2,
+	h1,
+	p {
+		margin: 0;
+		padding: 0;
+	}
+</style>

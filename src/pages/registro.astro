@@ -1,88 +1,71 @@
 ---
-// Supports weights 300-700
+import LayoutLogin from "../layouts/LayoutLogin.astro";
 import "@fontsource-variable/quicksand";
 import "@fontsource/abel";
-
 ---
 
-
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Registro</title>
-    </head>
-    <body>
-        <section>
-            <div class="form-act">
-                
-                <div class="cuerpo">
-                    <h3>CO<span>PRAC</span> LTD.</h3>
-                    <h2>LOGIN</h2>
-                    <form>
-                        <div class="inputdiv">
-                            <label for="email">Email</label>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="23"
-                                height="23"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
-                            >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"></path><path
-                                    d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
-                                ></path><path d="M3 7l9 6l9 -6"></path>
-                            </svg>
-                            <input type="email" name="email" />
-                        </div>
-
-                        <div class="inputdiv">
-                            <label for="password">Password</label>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="23"
-                                height="23"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="icon icon-tabler icons-tabler-outline icon-tabler-lock"
-                            >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"></path><path
-                                    d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"
-                                ></path><path
-                                    d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"
-                                ></path><path d="M8 11v-4a4 4 0 1 1 8 0v4"
-                                ></path></svg
-                            >
-                            <input type="password" name="password" />
-                        </div>
-                        <label class="chek">
-                            <input type="checkbox" />Remember Me
-                        </label>
-
-                        <br />
-                        <button id="btn-sub" type="submit">Log in</button>
-                    </form>
+<LayoutLogin title="Login">
+    <div class="form-act">
+        <div class="cuerpo">
+            <h3>CO<span>PRAC</span> LTD.</h3>
+            <h2>ACCESO</h2>
+            <form>
+                <div class="inputdiv">
+                    <label for="email">Email</label>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"
+                        ></path><path
+                            d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+                        ></path><path d="M3 7l9 6l9 -6"></path>
+                    </svg>
+                    <input type="email" name="email" />
                 </div>
-            </div>
-        </section>
-    </body>
-</html>
+
+                <div class="inputdiv">
+                    <label for="password">Password</label>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-lock"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"
+                        ></path><path
+                            d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"
+                        ></path><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"
+                        ></path><path d="M8 11v-4a4 4 0 1 1 8 0v4"></path></svg
+                    >
+                    <input type="password" name="password" />
+                </div>
+                <label class="chek">
+                    <input type="checkbox" />Remember Me
+                </label>
+
+                <div class="ship">
+                    <button id="btn-sub" type="submit">Ingresar</button>
+                    <a href="/info">Registro</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</LayoutLogin>
 <script>
     import { actions } from "astro:actions";
     import Swal from "sweetalert2";
@@ -111,28 +94,9 @@ import "@fontsource/abel";
 </script>
 
 <style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: "Courier New", Courier, monospace;
-        font-family: "Quicksand Variable", sans-serif;
-    }
-
-    section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 1280px;
-        height: 100vh;
-        background-image: url(/asset/piclumen.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
     .form-act {
         width: 400px;
-        height: 480px;
+        height: 500px;
         border-radius: 20px;
         backdrop-filter: blur(5px);
         border: 2px solid #fff;
@@ -140,6 +104,7 @@ import "@fontsource/abel";
         align-items: center;
         justify-content: center;
     }
+
     .cuerpo h2 {
         text-align: center;
         font-size: 32px;
@@ -203,24 +168,45 @@ import "@fontsource/abel";
         font-weight: 600;
         color: rgb(189, 0, 33);
     }
-    @media (max-width: 900px){
+    .ship {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+    .ship a {
+        margin-top: 20px;
+        padding: 10px 130px;
+        background-color: #fff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        color: rgb(189, 0, 33);
+    }
+    @media (max-width: 900px) {
         .form-act {
-            width: 390px;
+            width: 380px;
+            height: auto;
             display: flex;
             align-items: start;
             justify-content: center;
-            padding-top: 60px;
         }
-       
-
+        .cuerpo {
+            padding: 10px;
+        }
         .inputdiv input {
             height: 45px;
-            
+
             font-size: 20px;
             font-weight: 600;
         }
         form button {
-            padding: 15px 135px;
+            padding: 10px 135px;
+        }
+        .ship a {
+            padding: 10px 130px;
         }
     }
 </style>

@@ -1,0 +1,165 @@
+---
+import LayoutLogin from "../layouts/LayoutLogin.astro";
+---
+
+<LayoutLogin title="Register">
+    <div class="form-act">
+        <form>
+            <a href="/registro">⬅️ atras </a>
+            <div class="inputdiv">
+                <label for="email">Email</label>
+                <input type="email" name="email" required/>
+            </div>
+            <div class="inputdiv">
+                <label for="email">Contraseña</label>
+                <input type="password" name="password" required />
+            </div>
+            <h3>-- DATOS --</h3>
+            <div class="datos">
+                <input
+                    type="text"
+                    name="habilitacion"
+                    placeholder="Habilitacion"
+                />
+                <input type="text" name="nombre" placeholder="Nombre" />
+                <input
+                    type="text"
+                    name="medico"
+                    placeholder="Revisacion Medica"
+                />
+                <input
+                    type="text"
+                    name="salvavida"
+                    placeholder="Fecha Chaleco Salvavidas"
+                />
+                <input type="number" name="id" placeholder="IDD" />
+            </div>
+            <button type="submit" id="btn-submit">Enviar</button>
+        </form>
+    </div>
+</LayoutLogin>
+<script>
+    import { actions } from "astro:actions";
+    import Swal from "sweetalert2";
+
+    const form = document.querySelector("form");
+    const btn = document.querySelector("#btn-submit");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formdata = new FormData(form);
+
+        const { data, error } = await actions.registerUser(formdata);
+        if (error) {
+             
+            Swal.fire({
+                icon: "error",
+                title: "Error al ingresar",
+                text: error.message ,
+            });
+        } else {
+            Swal.fire({
+                icon: "success",
+                title: "¡Registro exitoso!",
+                text: "Redirigiendo al login",
+                confirmButtonColor: "#667eea",
+            }).then(() => {
+                window.location.replace("/registro");
+            });
+        }
+    });
+</script>
+<style>
+    .form-act {
+        width: 400px;
+        height: 500px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        border: 2px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    form {
+        margin-top: 50px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        h3 {
+            color: rgb(189, 0, 33);
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+    .inputdiv {
+        color: #fff;
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        label {
+            font-size: 18px;
+            padding-left: 5px;
+            padding-bottom: 3px;
+        }
+        input {
+            width: 100%;
+            height: 30px;
+            background-color: transparent;
+            border: 2px solid #fff;
+            outline: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+    }
+    .datos {
+        width: 80%;
+        height: auto;
+        input {
+            margin: 5px;
+            width: 100%;
+            height: 35px;
+            background-color: transparent;
+            border: 2px solid #fff;
+            outline: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+        input::placeholder {
+            color: #fff;
+        }
+    }
+    form button {
+        margin-top: 20px;
+        padding: 10px 130px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        color: rgb(189, 0, 33);
+    }
+     @media (max-width: 900px) {
+        .form-act {
+            width: 380px;
+            height: 500px;
+           
+        }
+        form {
+            margin-top: 25px;
+        }
+     }
+</style>
