@@ -1,39 +1,137 @@
 ---
 import { usuarioss } from "../../data/usuarios.json";
 import { firebase } from "../../firebase/config";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 
-const querySnapshot = await getDocs(collection(firebase.db , "userscp"))
-const { docs } = querySnapshot 
-const usuarioco = docs.map (contacto => ({
-    id:contacto.id ,
-    datos:contacto.data()
-})
-)
+const querySnapshot = await getDocs(collection(firebase.db, "userscp"));
+const { docs } = querySnapshot;
+const usuarioco = docs.map((contacto) => ({
+    id: contacto.id,
+    datos: contacto.data(),
+}));
+//obtener consejo actual 
+const consejo = "6CNx6wV7GF9hElKJtdh1";
+const docRef = doc(firebase.db, "userscp", "consejo1598", "datos", consejo);
+const docSnap = await getDoc(docRef);
+const consejonew = [];
+consejonew.push({
+    ...docSnap.data(),
+});
+//obtener gente de licencia especial
+const collectionRef = collection(firebase.db, "userscp", "estadoPersonal", "datos");
+const querySnapshotdos = await getDocs(collectionRef);
 
+     const newestados = [];
+     querySnapshotdos.forEach((doc) => {
+            newestados.push({
+                id: doc.id,
+                ...doc.data()
+            });
+        });
 
 ---
 
 <section>
+    <h3>- CONSEJO -</h3>
+    <div class="consejo">
+        <table class="table-uno">
+            <tr>
+                <td class="uno">PRESIDENTE</td>
+                <td class="uno">{consejonew[0].presidente}</td>
+            </tr>
+            <tr>
+                <td class="uno">SECRETARIO</td>
+                <td class="uno">{consejonew[0].secretario}</td>
+            </tr>
+            <tr>
+                <td class="uno">TESORERO</td>
+                <td class="uno">{consejonew[0].tesorero}</td>
+            </tr>
+            <tr>
+                <td class="uno">SINDICO</td>
+                <td class="uno">{consejonew[0].sindico}</td>
+            </tr>
+        </table>
+    </div>
+    <h3>ESTADO DE PRACTICOS</h3>
+    <div class="estado">
+        <table class="estadodos">
+            <tr>
+                <th class="fecha">DESDE</th>
+                <th>PRACTICO</th>
+                <th class="code">CODIGO</th>
+            </tr>
+            <tr>
+                <td class="fecha">23 marzo</td>
+                <td>Romeo Jul</td>
+                <td class="code">enfermo</td>
+            </tr>
+            { newestados.map((person)=> (
+                <tr>
+                  <td>{person.fecha}</td>
+                  <td>{person.pilot}</td>
+                  <td>{person.codigo}</td>
+                </tr>
+            ))
+
+            }
+        </table>
+    </div>
     <h3 id="pilot">- PRACTICOS -</h3>
     <table class="table-fixed">
         <thead>
             <tr>
                 <th class="habi">Habilitacion</th>
-                
                 <th class="name">Nombre</th>
                 <th class="email">Cel</th>
                 <th class="medica">R.Medica</th>
             </tr>
         </thead>
         <tbody>
-            
             {
                 usuarioco.map((usuario) => (
                     <tr>
                         <td>{usuario.datos.habilitacion}</td>
-                        <td><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><circle cx="15" cy="6" r="3" fill="currentColor" opacity="0.4"/><ellipse cx="16" cy="17" fill="currentColor" opacity="0.4" rx="5" ry="3"/><circle cx="9.001" cy="6" r="4" fill="currentColor"/><ellipse cx="9.001" cy="17.001" fill="currentColor" rx="7" ry="4"/></svg>-
-                            {usuario.datos.nombre}</td>
+                        <td>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28"
+                                height="28"
+                                viewBox="0 0 24 24"
+                            >
+                                <>
+                                    <circle
+                                        cx="15"
+                                        cy="6"
+                                        r="3"
+                                        fill="currentColor"
+                                        opacity="0.4"
+                                    />
+                                    <ellipse
+                                        cx="16"
+                                        cy="17"
+                                        fill="currentColor"
+                                        opacity="0.4"
+                                        rx="5"
+                                        ry="3"
+                                    />
+                                    <circle
+                                        cx="9.001"
+                                        cy="6"
+                                        r="4"
+                                        fill="currentColor"
+                                    />
+                                    <ellipse
+                                        cx="9.001"
+                                        cy="17.001"
+                                        fill="currentColor"
+                                        rx="7"
+                                        ry="4"
+                                    />
+                                </>
+                            </svg>
+                            -{usuario.datos.nombre}
+                        </td>
                         <td>01133460158</td>
                         <td>{usuario.datos.fecha}</td>
                     </tr>
@@ -46,13 +144,31 @@ const usuarioco = docs.map (contacto => ({
 <style>
     section {
         width: 90%;
-        padding-top: 50px;
-        margin: 0 auto;
-        height: 500px;
+
+        margin: 50px auto;
+        height: auto;
         h3 {
             font-size: 32px;
             color: #fff;
             text-align: center;
+        }
+    }
+    .estadodos {
+        display: block;
+        height: 300px;
+        overflow-y: auto;
+        border-radius: 10px;
+    }
+    .consejo {
+        margin: 0 auto;
+        width: 800px;
+        .table-uno {
+            border-radius: 10px;
+            .uno {
+                text-align: start;
+                font-weight: 600;
+                padding: 15px;
+            }
         }
     }
     section table {
@@ -61,11 +177,10 @@ const usuarioco = docs.map (contacto => ({
         width: 80%;
         margin: 0 auto;
         background-color: #0b1422;
-        
     }
     table thead {
         color: #fff;
-        
+
         background-color: transparent;
         position: sticky;
         top: 0;
@@ -77,14 +192,14 @@ const usuarioco = docs.map (contacto => ({
         color: #fff;
         border-bottom: 1px solid #111c2d;
     }
-   
+
     .table-fixed {
         display: block;
         height: 400px;
         overflow-y: auto;
         border-radius: 10px;
     }
-    .table-fixed::-webkit-scrollbar {
+    .table-fixed, .estadodos::-webkit-scrollbar {
         width: 5px;
         background-color: rgb(75, 75, 75);
         border-radius: 15px;
@@ -93,17 +208,18 @@ const usuarioco = docs.map (contacto => ({
         background-color: rgb(126, 121, 122);
         border-radius: 5px;
     }
-        
-    .table-fixed, tr {
+
+    .table-fixed,
+    tr {
         width: 763px;
-        transition: all ease-in .2s;
-        
+        transition: all ease-in 0.2s;
     }
-    .table-fixed, tr:hover {
+    .table-fixed,
+    tr:hover {
         background-color: #111c2d;
     }
-    .table-fixed, tr>th {
-        
+    .table-fixed,
+    tr > th {
         width: 250px;
         .habi {
             width: 100px;
@@ -112,27 +228,26 @@ const usuarioco = docs.map (contacto => ({
     td {
         font-size: 14px;
         position: relative;
-        
-    
+
         svg {
             color: chocolate;
-           position: absolute;
-           top: 10px;
-           left: 20px;
-            
+            position: absolute;
+            top: 10px;
+            left: 20px;
         }
     }
     @media (max-width: 900px) {
         section {
             width: 100%;
-            padding-top: 25px;
+            
             h3 {
-                font-size: 26px;
+                font-size: 24px;
             }
-
-        
         }
         section table {
+            width: 95%;
+        }
+        section .consejo {
             width: 95%;
         }
         td {
@@ -142,11 +257,11 @@ const usuarioco = docs.map (contacto => ({
                 left: -10px;
             }
         }
-        .table-fixed, tr>th {
-            .name{
+        .table-fixed,
+        tr > th {
+            .name {
                 min-width: 120px;
             }
-
         }
     }
 </style>
